@@ -1,4 +1,4 @@
-package dev.aabstractt.pvpup.visualise;
+package dev.aabstractt.pvpup.utils.visualise;
 
 import dev.aabstractt.pvpup.factory.ArenaFactory;
 import dev.aabstractt.pvpup.object.Arena;

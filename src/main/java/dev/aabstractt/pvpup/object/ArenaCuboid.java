@@ -1,14 +1,17 @@
 package dev.aabstractt.pvpup.object;
 
 import lombok.Getter;
+import lombok.NonNull;
 import org.bukkit.Bukkit;
 import org.bukkit.Chunk;
 import org.bukkit.Location;
 import org.bukkit.World;
 import org.bukkit.block.Block;
+import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.configuration.serialization.ConfigurationSerializable;
 import org.bukkit.entity.Player;
 
+import javax.annotation.Nullable;
 import java.util.*;
 
 public class ArenaCuboid implements Iterable<Block>, Cloneable, ConfigurationSerializable {
@@ -331,54 +334,6 @@ public class ArenaCuboid implements Iterable<Block>, Cloneable, ConfigurationSer
     }
 
     /**
-     * Get the volume of this Cuboid.
-     *
-     * @return The Cuboid volume, in blocks
-     */
-    public int getVolume() {
-        return this.getSizeX() * this.getSizeY() * this.getSizeZ();
-    }
-
-    /**
-     * Get the average light level of all empty (air) blocks in the Cuboid.  Returns 0 if there are no empty blocks.
-     *
-     * @return The average light level of this Cuboid
-     */
-    public byte getAverageLightLevel() {
-        long total = 0;
-        int n = 0;
-
-        for(Block b : this) {
-            if(b.isEmpty()) {
-                total += b.getLightLevel();
-                ++n;
-            }
-        }
-
-        return n > 0 ? (byte) (total / n) : 0;
-    }
-
-    /**
-     * Get the Cuboid big enough to hold both this Cuboid and the given one.
-     *
-     * @param other - The other cuboid.
-     * @return A new Cuboid large enough to hold this Cuboid and the given Cuboid
-     */
-    public Cuboid getBoundingCuboid(Cuboid other) {
-        if(other == null)
-            return this;
-
-        int xMin = Math.min(this.getLowerX(), other.getLowerX());
-        int yMin = Math.min(this.getLowerY(), other.getLowerY());
-        int zMin = Math.min(this.getLowerZ(), other.getLowerZ());
-        int xMax = Math.max(this.getUpperX(), other.getUpperX());
-        int yMax = Math.max(this.getUpperY(), other.getUpperY());
-        int zMax = Math.max(this.getUpperZ(), other.getUpperZ());
-
-        return new Cuboid(this.worldName, xMin, yMin, zMin, xMax, yMax, zMax);
-    }
-
-    /**
      * Get a block relative to the lower NE point of the Cuboid.
      *
      * @param x - The X co-ordinate
@@ -431,13 +386,22 @@ public class ArenaCuboid implements Iterable<Block>, Cloneable, ConfigurationSer
     }
 
     @Override
-    public Cuboid clone() {
-        return new Cuboid(this);
-    }
-
-    @Override
     public String toString() {
         return "Cuboid: " + this.worldName + "," + this.x1 + "," + this.y1 + "," + this.z1 + "=>" + this.x2 + "," + this.y2 + "," + this.z2;
+    }
+
+    public static @Nullable ArenaCuboid fromSection(@NonNull World world, @Nullable ConfigurationSection section) {
+        if (section == null) return null;
+
+        return new ArenaCuboid(
+                world,
+                section.getInt("min-x"),
+                section.getInt("min-y"),
+                section.getInt("min-z"),
+                section.getInt("max-x"),
+                section.getInt("max-y"),
+                section.getInt("max-z")
+        );
     }
 
     public class CuboidIterator implements Iterator<Block> {
@@ -482,44 +446,6 @@ public class ArenaCuboid implements Iterable<Block>, Cloneable, ConfigurationSer
         }
 
         public void remove() {
-        }
-    }
-
-    public enum CuboidDirection {
-        North,
-        East,
-        South,
-        West,
-        Up,
-        Down,
-        Horizontal,
-        Vertical,
-        Both,
-        Unknown;
-
-        public CuboidDirection opposite() {
-            switch(this) {
-                case North:
-                    return South;
-                case East:
-                    return West;
-                case South:
-                    return North;
-                case West:
-                    return East;
-                case Horizontal:
-                    return Vertical;
-                case Vertical:
-                    return Horizontal;
-                case Up:
-                    return Down;
-                case Down:
-                    return Up;
-                case Both:
-                    return Both;
-                default:
-                    return Unknown;
-            }
         }
     }
 }

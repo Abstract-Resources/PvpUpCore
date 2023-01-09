@@ -1,4 +1,4 @@
-package dev.aabstractt.pvpup.visualise;
+package dev.aabstractt.pvpup.utils.visualise;
 
 import com.comphenix.protocol.PacketType;
 import com.comphenix.protocol.ProtocolLibrary;
@@ -8,6 +8,7 @@ import com.comphenix.protocol.events.PacketEvent;
 import com.comphenix.protocol.reflect.FieldAccessException;
 import com.comphenix.protocol.reflect.StructureModifier;
 import dev.aabstractt.pvpup.AbstractPlugin;
+import dev.aabstractt.pvpup.utils.NmsUtils;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
@@ -64,7 +65,7 @@ public final class ProtocolLibHook {
                         if (handler.getVisualBlockAt(player, placedLocation) == null) {
                             event.setCancelled(true);
                             player.sendBlockChange(placedLocation, Material.AIR, (byte) 0);
-                            //NmsUtils.resendHeldItemPacket(player);
+                            NmsUtils.resendHeldItemPacket(player);
                         }
                     }
                 } catch (FieldAccessException ex) {

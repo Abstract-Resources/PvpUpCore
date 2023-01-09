@@ -1,4 +1,4 @@
-package dev.aabstractt.pvpup.visualise;
+package dev.aabstractt.pvpup.utils.visualise;
 
 import com.google.common.collect.HashBasedTable;
 import com.google.common.collect.Maps;

@@ -1,11 +1,11 @@
-package dev.aabstractt.pvpup.visualise;
+package dev.aabstractt.pvpup.utils.visualise;
 
+import com.comphenix.protocol.wrappers.ChunkCoordIntPair;
 import com.comphenix.protocol.wrappers.MultiBlockChangeInfo;
 import com.comphenix.protocol.wrappers.WrappedBlockData;
-import com.doctordark.hcf.packetwrapper.WrapperPlayServerMultiBlockChange;
 import com.google.common.collect.HashBasedTable;
 import com.google.common.collect.Table;
-import net.minecraft.server.v1_7_R4.ChunkCoordIntPair;
+import dev.aabstractt.pvpup.utils.packetwrapper.WrapperPlayServerMultiBlockChange;
 import org.bukkit.Chunk;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
@@ -14,6 +14,7 @@ import org.bukkit.material.MaterialData;
 import java.io.IOException;
 import java.util.Map;
 
+@SuppressWarnings("deprecation")
 public class VisualiseUtil {
 
     public static void handleBlockChanges(Player player, Map<Location, MaterialData> input) throws IOException {
@@ -49,9 +50,8 @@ public class VisualiseUtil {
             blockChangeInfo[i++] = new MultiBlockChangeInfo(entry.getKey(), WrappedBlockData.createData(data.getItemType()));
         }
         WrapperPlayServerMultiBlockChange packet = new WrapperPlayServerMultiBlockChange();
-        packet.setChunk(new com.comphenix.protocol.wrappers.ChunkCoordIntPair(chunk.getX(), chunk.getZ()));
+        packet.setChunk(new ChunkCoordIntPair(chunk.getX(), chunk.getZ()));
         packet.setRecords(blockChangeInfo);
         packet.sendPacket(player);
     }
-
 }

@@ -1,11 +1,42 @@
-0:
-  id: 0
-  min-level: 0
-  max-level: 1
-  required-points: 1
+0: # level
+  min-points: 0
+  max-points: 0
   down-level: 0
   contents:
-    0:
-      slot: 0
+    0: # inventory slot
       material: WOOD_AXE
       amount: 1
+      enchants: []
+
+    36: # slot boots
+      material: IRON_BOOTS
+      amount: 1
+      enchants: [PROTECTION, 1] #[Enchantment, level]
+
+
+# enchants
+# LURE
+# LUCK
+# ARROW_INFINITE
+# ARROW_FIRE
+# ARROW_KNOCKBACK
+# ARROW_DAMAGE
+# LOOT_BONUS_BLOCKS
+# DURABILITY
+# SILK_TOUCH
+# DIG_SPEED
+# LOOT_BONUS_MOBS
+# FIRE_ASPECT
+# KNOCKBACK
+# DAMAGE_ARTHROPODS
+# DAMAGE_UNDEAD
+# DAMAGE_ALL
+# DEPTH_STRIDER
+# THORNS
+# WATER_WORKER
+# OXYGEN
+# PROTECTION_PROJECTILE
+# PROTECTION_EXPLOSIONS
+# PROTECTION_FALL
+# PROTECTION_FIRE
+# PROTECTION_ENVIRONMENTAL

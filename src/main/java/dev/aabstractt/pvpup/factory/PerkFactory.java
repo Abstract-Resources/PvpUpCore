@@ -26,19 +26,18 @@ public class PerkFactory {
             ConfigurationSection section = configuration.getConfigurationSection(key);
 
             this.perks.add(new Perk(
-                    section.getInt("id"),
-                    section.getInt("min-level"),
-                    section.getInt("max-level"),
-                    section.getInt("required-points"),
+                    Integer.parseInt(key),
+                    section.getInt("min-points"),
+                    section.getInt("max-points"),
                     section.getInt("down-level"),
                     Perk.deserializeContents(section.getConfigurationSection("contents"))
             ));
         }
     }
 
-    public @Nullable Perk byLevel(int currentLevel) {
+    public @Nullable Perk byPoints(int points) {
         return this.perks.stream()
-                .filter(perk -> perk.isAccessible(currentLevel))
+                .filter(perk -> perk.isAccessible(points))
                 .findAny().orElse(null);
     }
 

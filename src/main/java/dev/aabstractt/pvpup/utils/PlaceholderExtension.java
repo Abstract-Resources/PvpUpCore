@@ -37,13 +37,13 @@ public class PlaceholderExtension extends PlaceholderExpansion {
         if (params.equals("kills")) return String.valueOf(profile.getKills());
         if (params.equals("deaths")) return String.valueOf(profile.getDeaths());
         if (params.equals("coins")) return String.valueOf(profile.getCoins());
-        if (params.equals("current_level")) return String.valueOf(profile.getCurrentLevel());
+        if (params.equals("current_level")) return String.valueOf(profile.getCurrentPerk());
         if (params.equals("points")) return String.valueOf(profile.getPoints());
-        if (params.equals("next_level")) return String.valueOf(profile.getCurrentLevel() + 1);
+        if (params.equals("next_level")) return String.valueOf(profile.getCurrentPerk() + 1);
 
         if (params.equals("next_level_points")) {
             Perk perk = PerkFactory.getInstance().byId(profile.getCurrentPerk() + 1);
-            return perk != null ? String.valueOf(perk.getMinLevel()) : "&cNone";
+            return perk != null ? String.valueOf(perk.getMinPoints()) : "&cNone";
         }
 
         return null;

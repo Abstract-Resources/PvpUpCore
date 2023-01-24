@@ -23,7 +23,6 @@ public class Profile {
     private int coins = 0;
     private int points = 0;
 
-    private int currentLevel = 0;
     private int currentPerk = 0;
 
     private boolean admin = false;

@@ -16,15 +16,14 @@ import java.util.Map;
 public class Perk {
 
     private final int id;
-    private final int minLevel;
-    private final int maxLevel;
-    private final int requiredPoints;
+    private final int minPoints;
+    private final int maxPoints;
     private final int downLevel;
 
     private final Map<Integer, ItemStack> contents;
 
-    public boolean isAccessible(int currentLevel) {
-        return currentLevel >= this.minLevel && this.maxLevel >= currentLevel;
+    public boolean isAccessible(int currentPoints) {
+        return currentPoints >= this.minPoints && this.maxPoints >= currentPoints;
     }
 
     public void apply(@NonNull Player player) {
@@ -41,7 +40,7 @@ public class Perk {
 
             if (section == null) continue;
 
-            contents.put(section.getInt("slot"), new ItemStack(
+            contents.put(Integer.parseInt(key), new ItemStack(
                     Material.valueOf(section.getString("material")),
                     section.getInt("amount"),
                     (short) section.getInt("damage", 0))

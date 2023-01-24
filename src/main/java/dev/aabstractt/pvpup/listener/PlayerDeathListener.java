@@ -28,11 +28,15 @@ public class PlayerDeathListener implements Listener {
 
         profile.setDeaths(profile.getDeaths() + 1);
 
-        Perk perk = PerkFactory.getInstance().byLevel(profile.getCurrentLevel());
-        profile.setCurrentLevel(perk != null ? perk.getDownLevel() : 0);
+        Perk perk = PerkFactory.getInstance().byPoints(profile.getPoints());
+        profile.setCurrentPerk(perk != null ? perk.getDownLevel() : 0);
 
-        perk = PerkFactory.getInstance().byLevel(profile.getCurrentLevel());
-        if (perk != null) perk.apply(player);
+        perk = PerkFactory.getInstance().byId(profile.getCurrentPerk());
+        if (perk != null) {
+            perk.apply(player);
+
+            profile.setPoints(perk.getMinPoints());
+        }
 
         Player killer = player.getKiller();
         if (killer == null) return;
@@ -41,10 +45,9 @@ public class PlayerDeathListener implements Listener {
         if (profile == null) return;
 
         profile.setKills(profile.getKills() + 1);
+        profile.setPoints(profile.getPoints() + 1);
 
-        profile.setCurrentLevel(profile.getCurrentLevel() + 1);
-
-        perk = PerkFactory.getInstance().byLevel(profile.getCurrentLevel());
+        perk = PerkFactory.getInstance().byPoints(profile.getPoints());
         if (perk == null) return;
         if (profile.getCurrentPerk() == perk.getId()) return;
 

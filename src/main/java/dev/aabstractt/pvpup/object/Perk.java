@@ -44,7 +44,7 @@ public class Perk {
             contents.put(section.getInt("slot"), new ItemStack(
                     Material.valueOf(section.getString("material")),
                     section.getInt("amount"),
-                    (short) section.getInt("damage"))
+                    (short) section.getInt("damage", 0))
             );
         }
 

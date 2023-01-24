@@ -1,0 +1,11 @@
+0:
+  id: 0
+  min-level: 0
+  max-level: 1
+  required-points: 1
+  down-level: 0
+  contents:
+    0:
+      slot: 0
+      material: WOOD_AXE
+      amount: 1

@@ -4,10 +4,7 @@ import dev.aabstractt.pvpup.command.PvpUpCommand;
 import dev.aabstractt.pvpup.factory.ArenaFactory;
 import dev.aabstractt.pvpup.factory.PerkFactory;
 import dev.aabstractt.pvpup.layout.ScoreboardLayout;
-import dev.aabstractt.pvpup.listener.PlayerDeathListener;
-import dev.aabstractt.pvpup.listener.PlayerInteractListener;
-import dev.aabstractt.pvpup.listener.PlayerJoinListener;
-import dev.aabstractt.pvpup.listener.PlayerQuitListener;
+import dev.aabstractt.pvpup.listener.*;
 import dev.aabstractt.pvpup.utils.visualise.WallBorderListener;
 import lombok.Getter;
 import org.bukkit.Bukkit;
@@ -35,6 +32,7 @@ public class AbstractPlugin extends JavaPlugin {
 
         this.getServer().getPluginManager().registerEvents(new PlayerJoinListener(), this);
         this.getServer().getPluginManager().registerEvents(new PlayerInteractListener(), this);
+        this.getServer().getPluginManager().registerEvents(new PlayerMoveListener(), this);
         this.getServer().getPluginManager().registerEvents(new PlayerDeathListener(), this);
         this.getServer().getPluginManager().registerEvents(new PlayerQuitListener(), this);
 

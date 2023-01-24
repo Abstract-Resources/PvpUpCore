@@ -16,7 +16,7 @@ public enum VisualType {
         private final BlockFiller blockFiller = new BlockFiller() {
             @Override
             VisualBlockData generate(Player player, Location location) {
-                return new VisualBlockData(Material.STAINED_GLASS, DyeColor.PURPLE.getData());
+                return new VisualBlockData(Material.STAINED_GLASS, DyeColor.RED.getData());
             }
         };
 

@@ -1,5 +1,8 @@
 package dev.aabstractt.pvpup.command;
 
+import dev.aabstractt.pvpup.command.argument.AdminArgument;
+import dev.aabstractt.pvpup.command.argument.CreateArenaArgument;
+import dev.aabstractt.pvpup.command.argument.WorldArgument;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -13,7 +16,13 @@ public class PvpUpCommand implements CommandExecutor {
 
     private final Set<Argument> arguments = new HashSet<>();
 
-    public PvpUpCommand() {}
+    public PvpUpCommand() {
+        this.registerArgument(
+                new CreateArenaArgument("create", "pvpup.admin"),
+                new AdminArgument("admin", "pvpup.admin"),
+                new WorldArgument("world", "pvpup.admin")
+        );
+    }
 
     private void registerArgument(Argument... arguments) {
         this.arguments.addAll(Arrays.asList(arguments));

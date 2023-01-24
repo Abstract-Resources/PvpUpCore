@@ -4,15 +4,14 @@ import dev.aabstractt.pvpup.AbstractPlugin;
 import dev.aabstractt.pvpup.object.Perk;
 import lombok.Getter;
 import lombok.NonNull;
-import org.bukkit.Material;
 import org.bukkit.configuration.Configuration;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.configuration.file.YamlConfiguration;
-import org.bukkit.inventory.ItemStack;
 
 import javax.annotation.Nullable;
 import java.io.File;
-import java.util.*;
+import java.util.HashSet;
+import java.util.Set;
 
 public class PerkFactory {
 
@@ -41,5 +40,11 @@ public class PerkFactory {
         return this.perks.stream()
                 .filter(perk -> perk.isAccessible(currentLevel))
                 .findAny().orElse(null);
+    }
+
+    public @Nullable Perk byId(int id) {
+        return this.perks.stream()
+                .filter(perk -> perk.getId() == id)
+                .findFirst().orElse(null);
     }
 }

@@ -18,8 +18,15 @@ public class Profile {
     private final UUID uniqueId;
     private final String name;
 
+    private int kills = 0;
+    private int deaths = 0;
+    private int coins = 0;
+    private int points = 0;
+
     private int currentLevel = 0;
     private int currentPerk = 0;
+
+    private boolean admin = false;
 
     public static void store(@NonNull Player player) {
         profilesStored.put(player.getUniqueId(), new Profile(player.getUniqueId(), player.getName()));

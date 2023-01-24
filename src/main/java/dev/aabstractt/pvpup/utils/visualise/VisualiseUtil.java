@@ -47,7 +47,10 @@ public class VisualiseUtil {
         int i = 0;
         for (Map.Entry<Location, MaterialData> entry : input.entrySet()) {
             MaterialData data = entry.getValue();
-            blockChangeInfo[i++] = new MultiBlockChangeInfo(entry.getKey(), WrappedBlockData.createData(data.getItemType()));
+
+            WrappedBlockData wrappedBlockData = WrappedBlockData.createData(data.getItemType());
+            wrappedBlockData.setData(data.getData());
+            blockChangeInfo[i++] = new MultiBlockChangeInfo(entry.getKey(), wrappedBlockData);
         }
         WrapperPlayServerMultiBlockChange packet = new WrapperPlayServerMultiBlockChange();
         packet.setChunk(new ChunkCoordIntPair(chunk.getX(), chunk.getZ()));

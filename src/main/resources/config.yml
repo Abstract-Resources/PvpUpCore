@@ -1,0 +1,28 @@
+scoreboard:
+  title: '&b&lPvp Up'
+  lines: # reverse
+    lobby:
+      - '&emc.server.net'
+      - '&a'
+      - '&fMuertes: &c%pvpup_deaths%'
+      - '&fBajas: &e%pvpup_kills%'
+      - '&7Estadisticas'
+      - '&e'
+      - '&fMonedas: &e%pvpup_coins%'
+      - '&f'
+      - '&fRango: &c¡Adquierelo!'
+      - '&f¡Hola! &b%pvpup_name%'
+    match:
+      - '&emc.server.net'
+      - '&c'
+      - '&fMuertes: &c%pvpup_deaths%'
+      - '&fBajas: &e%pvpup_kills%'
+      - '&a'
+      - '&fNecesario: &6%pvpup_next_level_points% punto'
+      - '&fSiguiente: &dNivel %pvpup_next_level%'
+      - '&fPuntos: &a%pvpup_points%'
+      - '&fActual: &eNivel %pvpup_current_level%'
+      - '&7Estadisticas'
+      - '&f'
+      - '&fRango: &c¡Adquierelo!'
+      - '&f¡Hola &b%pvpup_name%&f!'

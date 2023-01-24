@@ -7,6 +7,7 @@ import org.bukkit.Chunk;
 import org.bukkit.Location;
 import org.bukkit.World;
 import org.bukkit.block.Block;
+import org.bukkit.configuration.Configuration;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.configuration.serialization.ConfigurationSerializable;
 import org.bukkit.entity.Player;
@@ -17,8 +18,12 @@ import java.util.*;
 public class ArenaCuboid implements Iterable<Block>, Cloneable, ConfigurationSerializable {
 
     private final String worldName;
-    private final int x1, y1, z1;
-    private final int x2, y2, z2;
+    private int x1;
+    private int y1;
+    private int z1;
+    private int x2;
+    private int y2;
+    private int z2;
 
     @Getter private Location l1 = null;
     @Getter private Location l2 = null;
@@ -127,17 +132,16 @@ public class ArenaCuboid implements Iterable<Block>, Cloneable, ConfigurationSer
         this.z2 = (Integer) map.get("z2");
     }
 
-    @Override
-    public Map<String, Object> serialize() {
-        final Map<String, Object> map = new HashMap<>();
-        map.put("worldName", this.worldName);
-        map.put("x1", this.x1);
-        map.put("y1", this.y1);
-        map.put("z1", this.z1);
-        map.put("x2", this.x2);
-        map.put("y2", this.y2);
-        map.put("z2", this.z2);
-        return map;
+    public void setFirstCorner(@NonNull Location location) {
+        this.x1 = location.getBlockX();
+        this.y1 = location.getBlockY();
+        this.z1 = location.getBlockZ();
+    }
+
+    public void setSecondCorner(@NonNull Location location) {
+        this.x2 = location.getBlockX();
+        this.y2 = location.getBlockY();
+        this.z2 = location.getBlockZ();
     }
 
     /**
@@ -299,6 +303,56 @@ public class ArenaCuboid implements Iterable<Block>, Cloneable, ConfigurationSer
     }
 
     /**
+     * Given {@link Location}s v1 and v2 (which must be sorted), return the
+     * {@link Location}s which represent all the points along
+     * the edges of the {@link ArenaCuboid} formed by v1 and v2.
+     *
+     * @return the edges of this {@link ArenaCuboid}
+     */
+    public List<Location> edges() {
+        return this.edges(-1, -1, -1, -1);
+    }
+
+    /**
+     * Given {@link Vector}s v1 and v2 (which must be sorted), return the
+     * {@link Vector}s which represent all the points along
+     * the edges of the {@link ArenaCuboid} formed by v1 and v2.
+     *
+     * @return the edges of this {@link ArenaCuboid}
+     */
+    public List<Location> edges(int fixedMinX, int fixedMaxX, int fixedMinZ, int fixedMaxZ) {
+        final int minX = this.x1;
+        final int maxX = this.x2;
+        final int minZ = this.z1;
+        final int maxZ = this.z2;
+
+        int capacity = ((maxX - minX) * 4) + ((maxZ - minZ) * 4);
+        capacity += 4; // we do this because the second loop doesn't check '<=' but just '<'.
+
+        List<Location> result = new ArrayList<>(capacity);
+        if (capacity <= 0) return result;
+
+        final int minY = this.y1;
+        final int maxY = this.y2;
+
+        for (int x = minX; x <= maxX; x++) {
+            result.add(new Location(this.getWorld(), x, minY, minZ));
+            result.add(new Location(this.getWorld(), x, minY, maxZ));
+            result.add(new Location(this.getWorld(), x, maxY, minZ));
+            result.add(new Location(this.getWorld(), x, maxY, maxZ));
+        }
+
+        for (int z = minZ; z <= maxZ; z++) {
+            result.add(new Location(this.getWorld(), minX, minY, z));
+            result.add(new Location(this.getWorld(), minX, maxY, z));
+            result.add(new Location(this.getWorld(), maxX, minY, z));
+            result.add(new Location(this.getWorld(), maxX, maxY, z));
+        }
+
+        return result;
+    }
+
+    /**
      * Return true if the point at (x,y,z) is contained within this Cuboid.
      *
      * @param x - The X co-ordinate
@@ -327,8 +381,9 @@ public class ArenaCuboid implements Iterable<Block>, Cloneable, ConfigurationSer
      * @return true if the Location is within this Cuboid, false otherwise
      */
     public boolean contains(Location l) {
-        if(!this.worldName.equals(l.getWorld().getName()))
+        if(!this.worldName.equals(l.getWorld().getName())) {
             return false;
+        }
 
         return this.contains(l.getBlockX(), l.getBlockY(), l.getBlockZ());
     }
@@ -402,6 +457,18 @@ public class ArenaCuboid implements Iterable<Block>, Cloneable, ConfigurationSer
                 section.getInt("max-y"),
                 section.getInt("max-z")
         );
+    }
+
+    @Override
+    public Map<String, Object> serialize() {
+        final Map<String, Object> map = new HashMap<>();
+        map.put("min-x", this.x1);
+        map.put("min-y", this.y1);
+        map.put("min-z", this.z1);
+        map.put("max-x", this.x2);
+        map.put("max-y", this.y2);
+        map.put("max-z", this.z2);
+        return map;
     }
 
     public class CuboidIterator implements Iterator<Block> {

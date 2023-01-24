@@ -28,6 +28,6 @@ public class CreateArenaArgument extends PlayerArgument {
 
         ArenaFactory.getInstance().registerNewArena(new Arena(
                 world.getName()
-        ));
+        ), true);
     }
 }

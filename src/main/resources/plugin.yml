@@ -1,0 +1,8 @@
+name: PvpUpCore
+version: 0.1
+author: aabstractt
+main: dev.aabstractt.pvpup.AbstractPlugin
+
+commands:
+  pvpup:
+    permission: pvpup.admin

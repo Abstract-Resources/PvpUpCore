@@ -1,5 +1,6 @@
 package dev.aabstractt.pvpup.listener;
 
+import dev.aabstractt.pvpup.layout.ScoreboardLayout;
 import dev.aabstractt.pvpup.object.Profile;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -10,5 +11,7 @@ public class PlayerQuitListener implements Listener {
     @EventHandler
     public void onPlayerQuitEvent(PlayerQuitEvent ev) {
         Profile.flush(ev.getPlayer());
+
+        ScoreboardLayout.getInstance().flush(ev.getPlayer());
     }
 }

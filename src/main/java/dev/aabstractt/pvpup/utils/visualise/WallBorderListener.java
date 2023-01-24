@@ -5,7 +5,6 @@ import dev.aabstractt.pvpup.object.Arena;
 import dev.aabstractt.pvpup.object.ArenaCuboid;
 import org.bukkit.Location;
 import org.bukkit.World;
-import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
@@ -43,6 +42,7 @@ public class WallBorderListener implements Listener {
 
         ArenaCuboid cuboid = arena.getSpawnCuboid();
         if (cuboid == null) return;
+        if (cuboid.isInCuboid(player)) return;
 
         final VisualType visualType = VisualType.SPAWN_BORDER;
 
@@ -76,9 +76,7 @@ public class WallBorderListener implements Listener {
 
         if (!inside) return;
 
-        for (Block block : cuboid.corners()) {
-            // Only show those in range.
-            Location edge = block.getLocation();
+        for (Location edge : cuboid.edges()) {
             if (Math.abs(edge.getBlockX() - toX) > WALL_BORDER_HORIZONTAL_DISTANCE) continue;
             if (Math.abs(edge.getBlockZ() - toZ) > WALL_BORDER_HORIZONTAL_DISTANCE) continue;
 

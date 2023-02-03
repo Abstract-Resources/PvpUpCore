@@ -55,12 +55,6 @@ public class AbstractPlugin extends JavaPlugin {
 
         this.getCommand("pvpup").setExecutor(new PvpUpCommand());
 
-        ConfigurationSection section = this.getConfig().getConfigurationSection("messages");
-
-        for (String key : section.getKeys(false)) {
-            messages.put(key, section.getString(key));
-        }
-
         new BukkitRunnable() {
 
             @Override
@@ -70,6 +64,13 @@ public class AbstractPlugin extends JavaPlugin {
                 }
             }
         }.runTaskTimerAsynchronously(this, 20, 5);
+
+        ConfigurationSection section = this.getConfig().getConfigurationSection("messages");
+        if (section == null) return;
+
+        for (String key : section.getKeys(false)) {
+            messages.put(key, section.getString(key));
+        }
     }
 
     public static void broadcastActionBar(@NonNull World world, @NonNull String message) {

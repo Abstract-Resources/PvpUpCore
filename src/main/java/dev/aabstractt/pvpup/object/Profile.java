@@ -25,10 +25,18 @@ public class Profile {
 
     private int currentPerk = 0;
 
+    private long combatExpireAt = 0;
+
     private boolean admin = false;
 
     public static void store(@NonNull Player player) {
         profilesStored.put(player.getUniqueId(), new Profile(player.getUniqueId(), player.getName()));
+    }
+
+    public void flush() {
+        this.currentPerk = 0;
+        this.combatExpireAt = 0;
+        this.admin = false;
     }
 
     public static void flush(@NonNull Player player) {

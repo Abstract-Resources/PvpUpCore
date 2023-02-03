@@ -3,6 +3,8 @@ package dev.aabstractt.pvpup.utils.visualise;
 import dev.aabstractt.pvpup.factory.ArenaFactory;
 import dev.aabstractt.pvpup.object.Arena;
 import dev.aabstractt.pvpup.object.ArenaCuboid;
+import dev.aabstractt.pvpup.object.Profile;
+import lombok.NonNull;
 import org.bukkit.Location;
 import org.bukkit.World;
 import org.bukkit.entity.Player;
@@ -36,13 +38,18 @@ public class WallBorderListener implements Listener {
         onPlayerMove(event); // PlayerTeleportEvent doesn't have a chained handlerList
     }
 
-    private void handlePositionChanged(Player player, World toWorld, int toX, int toY, int toZ) {
+    private void handlePositionChanged(@NonNull Player player, @NonNull World toWorld, int toX, int toY, int toZ) {
         Arena arena = ArenaFactory.getInstance().byWorld(toWorld);
         if (arena == null) return;
 
         ArenaCuboid cuboid = arena.getSpawnCuboid();
         if (cuboid == null) return;
         if (cuboid.isInCuboid(player)) return;
+        if (cuboid.isInCuboid(new Location(toWorld, toX, toY, toZ))) return;
+
+        Profile profile = Profile.byPlayer(player);
+        if (profile == null) return;
+        if (System.currentTimeMillis() > profile.getCombatExpireAt()) return;
 
         final VisualType visualType = VisualType.SPAWN_BORDER;
 

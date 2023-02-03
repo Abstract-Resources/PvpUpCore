@@ -1,5 +1,6 @@
 package dev.aabstractt.pvpup.listener;
 
+import dev.aabstractt.pvpup.AbstractPlugin;
 import dev.aabstractt.pvpup.factory.ArenaFactory;
 import dev.aabstractt.pvpup.factory.PerkFactory;
 import dev.aabstractt.pvpup.object.Arena;
@@ -39,10 +40,20 @@ public class PlayerDeathListener implements Listener {
         }
 
         Player killer = player.getKiller();
-        if (killer == null) return;
+        if (killer == null) {
+            AbstractPlugin.broadcastActionBar(player.getWorld(), AbstractPlugin.replacePlaceholders("PLAYER_DEATH_WITHOUT_KILLER", player.getName()));
+
+            return;
+        }
 
         profile = Profile.byPlayer(killer);
         if (profile == null) return;
+
+        AbstractPlugin.broadcastActionBar(player.getWorld(), AbstractPlugin.replacePlaceholders(
+                "PLAYER_DEATH_WITH_KILLER",
+                player.getName(),
+                killer.getName()
+        ));
 
         profile.setKills(profile.getKills() + 1);
         profile.setPoints(profile.getPoints() + 1);

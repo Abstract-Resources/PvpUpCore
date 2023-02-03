@@ -26,3 +26,7 @@ scoreboard:
       - '&f'
       - '&fRango: &c¡Adquierelo!'
       - '&f¡Hola &b%pvpup_name%&f!'
+
+messages:
+  PLAYER_DEATH_WITHOUT_KILLER: '&c{%0}&7 was slain.'
+  PLAYER_DEATH_WITH_KILLER: '&c{%0}&7 was slain by &a{%1}'

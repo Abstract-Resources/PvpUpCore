@@ -1,5 +1,7 @@
 package dev.aabstractt.pvpup;
 
+import com.cryptomorin.xseries.messages.ActionBar;
+import com.google.common.collect.Maps;
 import dev.aabstractt.pvpup.command.PvpUpCommand;
 import dev.aabstractt.pvpup.factory.ArenaFactory;
 import dev.aabstractt.pvpup.factory.PerkFactory;
@@ -8,25 +10,26 @@ import dev.aabstractt.pvpup.listener.*;
 import dev.aabstractt.pvpup.utils.visualise.WallBorderListener;
 import lombok.Getter;
 import lombok.NonNull;
-import net.minecraft.server.ChatComponentText;
-import net.minecraft.server.PacketPlayOutChat;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.World;
 import org.bukkit.configuration.ConfigurationSection;
-import org.bukkit.craftbukkit.entity.CraftPlayer;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.scheduler.BukkitRunnable;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.UUID;
+import java.util.concurrent.TimeUnit;
 
 public class AbstractPlugin extends JavaPlugin {
 
     @Getter private static AbstractPlugin instance;
 
     private final static Map<String, String> messages = new HashMap<>();
+
+    private final static Map<UUID, Long> pendingToClearActionBar = Maps.newConcurrentMap();
 
     @Override
     public void onEnable() {
@@ -59,8 +62,14 @@ public class AbstractPlugin extends JavaPlugin {
 
             @Override
             public void run() {
+                long now = System.currentTimeMillis();
+
                 for (Player player : Bukkit.getOnlinePlayers()) {
                     ScoreboardLayout.getInstance().update(player);
+
+                    if (pendingToClearActionBar.getOrDefault(player.getUniqueId(), now) > now) continue;
+
+                    pendingToClearActionBar.remove(player.getUniqueId());
                 }
             }
         }.runTaskTimerAsynchronously(this, 20, 5);
@@ -74,10 +83,10 @@ public class AbstractPlugin extends JavaPlugin {
     }
 
     public static void broadcastActionBar(@NonNull World world, @NonNull String message) {
-        PacketPlayOutChat packet = new PacketPlayOutChat(new ChatComponentText(message), (byte)2);
-
         for (Player player : world.getPlayers()) {
-            ((CraftPlayer) player).getHandle().playerConnection.sendPacket(packet);
+            ActionBar.sendActionBar(player, message);
+
+            pendingToClearActionBar.put(player.getUniqueId(), System.currentTimeMillis() + TimeUnit.SECONDS.toMillis(2));
         }
     }
 

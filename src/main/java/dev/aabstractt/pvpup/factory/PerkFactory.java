@@ -1,5 +1,6 @@
 package dev.aabstractt.pvpup.factory;
 
+import com.google.common.collect.ImmutableSet;
 import dev.aabstractt.pvpup.AbstractPlugin;
 import dev.aabstractt.pvpup.object.Perk;
 import lombok.Getter;
@@ -27,6 +28,8 @@ public class PerkFactory {
 
             this.perks.add(new Perk(
                     Integer.parseInt(key),
+                    section.getInt("slot", -1),
+                    section.getInt("page", -1),
                     section.getInt("min-points"),
                     section.getInt("max-points"),
                     section.getInt("down-level"),
@@ -45,5 +48,9 @@ public class PerkFactory {
         return this.perks.stream()
                 .filter(perk -> perk.getId() == id)
                 .findFirst().orElse(null);
+    }
+
+    public @NonNull Set<Perk> all() {
+        return ImmutableSet.copyOf(this.perks);
     }
 }

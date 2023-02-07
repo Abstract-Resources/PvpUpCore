@@ -30,3 +30,12 @@ scoreboard:
 messages:
   PLAYER_DEATH_WITHOUT_KILLER: '&c{%0}&7 was slain.'
   PLAYER_DEATH_WITH_KILLER: '&c{%0}&7 was slain by &a{%1}'
+  LEVELS_MENU_ITEM_REACHED: '&f&oNivel {%0}&r&7 - &aAlcanzado'
+  LEVELS_MENU_ITEM_PROGRESS: '&f&oNivel {%0}&r&7 - &eEn progreso'
+  LEVELS_MENU_ITEM_LOCKED: '&f&oNivel {%0}&r&7 - &cNo alcanzado'
+  LEVELS_MENU_ITEM_LORE_REACHED: "&d\n&7Puntos necesarios: &b{%0} puntos\n&a\n&7Este nivel contiene:\n&f{%1}\n&7\n&aYa haz alcanzado este nivel"
+  LEVELS_MENU_ITEM_LORE_PROGRESS: "&d\n&7Puntos necesarios: &b{%0} puntos\n&7Actualmente tienes: &b{%2}\n&a\n&7Este nivel contiene:\n&f{%1}\n&7\n&eNecesitas {%3} puntos para alcanzar este nivel"
+  LEVELS_MENU_ITEM_LORE_LOCKED: "&d\n&7Puntos necesarios: &b{%0} puntos\n&7Actualmente tienes: &b{%2}\n&a\n&7Este nivel contiene:\n&f{%1}\n&7\n&cAlcanza el nivel anterior para\n&ccomenzar con este nivel"
+  WOOD_AXE: 'Hacha de madera'
+
+perks-level:

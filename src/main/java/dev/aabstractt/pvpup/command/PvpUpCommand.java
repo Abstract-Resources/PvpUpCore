@@ -2,6 +2,7 @@ package dev.aabstractt.pvpup.command;
 
 import dev.aabstractt.pvpup.command.argument.AdminArgument;
 import dev.aabstractt.pvpup.command.argument.CreateArenaArgument;
+import dev.aabstractt.pvpup.command.argument.PerksArgument;
 import dev.aabstractt.pvpup.command.argument.WorldArgument;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
@@ -20,7 +21,8 @@ public class PvpUpCommand implements CommandExecutor {
         this.registerArgument(
                 new CreateArenaArgument("create", "pvpup.admin"),
                 new AdminArgument("admin", "pvpup.admin"),
-                new WorldArgument("world", "pvpup.admin")
+                new WorldArgument("world", "pvpup.admin"),
+                new PerksArgument("perks", null)
         );
     }
 

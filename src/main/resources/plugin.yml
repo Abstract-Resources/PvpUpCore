@@ -3,6 +3,12 @@ version: 0.1
 author: aabstractt
 main: dev.aabstractt.pvpup.AbstractPlugin
 
+softdepend:
+  - Vault
+
 commands:
   pvpup:
     permission: pvpup.admin
+
+loadbefore:
+  - AbstractCosmetics

@@ -24,6 +24,11 @@
             <id>hpfxd-repo</id>
             <url>https://repo.hpfxd.com/releases/</url>
         </repository>
+
+        <repository>
+            <id>jitpack.io</id>
+            <url>https://jitpack.io</url>
+        </repository>
     </repositories>
 
     <dependencies>
@@ -74,6 +79,14 @@
             <systemPath>${project.basedir}/libs/PlaceholderAPI-2.11.3-DEV-160.jar</systemPath>
         </dependency>
 
+        <dependency>
+            <groupId>dev.aabstractt.cosmetics</groupId>
+            <artifactId>cosmetics-parent</artifactId>
+            <version>2023.02.1</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/libs/AbstractCosmetics-2023.02.1.jar</systemPath>
+        </dependency>
+
         <!-- triumph-gui -->
         <dependency>
             <groupId>dev.triumphteam</groupId>
@@ -86,6 +99,14 @@
             <groupId>com.github.cryptomorin</groupId>
             <artifactId>XSeries</artifactId>
             <version>LATEST</version>
+        </dependency>
+
+        <!-- vault-api -->
+        <dependency>
+            <groupId>com.github.MilkBowl</groupId>
+            <artifactId>VaultAPI</artifactId>
+            <version>1.7</version>
+            <scope>provided</scope>
         </dependency>
     </dependencies>
 

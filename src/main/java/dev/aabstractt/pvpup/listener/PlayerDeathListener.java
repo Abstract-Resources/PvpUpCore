@@ -3,9 +3,11 @@ package dev.aabstractt.pvpup.listener;
 import dev.aabstractt.pvpup.AbstractPlugin;
 import dev.aabstractt.pvpup.factory.ArenaFactory;
 import dev.aabstractt.pvpup.factory.PerkFactory;
+import dev.aabstractt.pvpup.hook.CosmeticsHook;
 import dev.aabstractt.pvpup.object.Arena;
 import dev.aabstractt.pvpup.object.Perk;
 import dev.aabstractt.pvpup.object.Profile;
+import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -20,9 +22,15 @@ public class PlayerDeathListener implements Listener {
         Arena arena = ArenaFactory.getInstance().byWorld(player.getWorld());
         if (arena == null) return;
 
-        player.teleport(player.getWorld().getSpawnLocation());
+        player.setFallDistance(0);
+
+        player.setHealth(player.getMaxHealth());
+        player.setFoodLevel(20);
+
         player.getInventory().clear();
         player.getActivePotionEffects().clear();
+
+        Bukkit.getScheduler().scheduleSyncDelayedTask(AbstractPlugin.getInstance(), () -> player.spigot().respawn(), 10);
 
         Profile profile = Profile.byPlayer(player);
         if (profile == null) return;
@@ -40,6 +48,19 @@ public class PlayerDeathListener implements Listener {
         }
 
         Player killer = player.getKiller();
+
+        CosmeticsHook.handleDeathSound(player);
+        CosmeticsHook.handleDeathHologram(player,
+                killer == null,
+                "player", player.getName(),
+                "killer", killer != null ? killer.getName() : "none",
+                "coins", String.valueOf(profile.getCoins()),
+                "deaths", String.valueOf(profile.getDeaths()),
+                "kills", String.valueOf(profile.getKills())
+        );
+
+        player.teleport(player.getWorld().getSpawnLocation());
+
         if (killer == null) {
             AbstractPlugin.broadcastActionBar(player.getWorld(), AbstractPlugin.replacePlaceholders("PLAYER_DEATH_WITHOUT_KILLER", player.getName()));
 

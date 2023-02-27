@@ -5,6 +5,7 @@ import com.google.common.collect.Maps;
 import dev.aabstractt.pvpup.command.PvpUpCommand;
 import dev.aabstractt.pvpup.factory.ArenaFactory;
 import dev.aabstractt.pvpup.factory.PerkFactory;
+import dev.aabstractt.pvpup.hook.VaultHook;
 import dev.aabstractt.pvpup.layout.ScoreboardLayout;
 import dev.aabstractt.pvpup.listener.*;
 import dev.aabstractt.pvpup.utils.visualise.WallBorderListener;
@@ -35,6 +36,12 @@ public class AbstractPlugin extends JavaPlugin {
     public void onEnable() {
         instance = this;
 
+        if (!VaultHook.hook()) {
+            this.getLogger().warning("Vault hook not was loaded... All economy commands was disabled.");
+        } else {
+            this.getLogger().info("Vault hook successfully registered! Now using 'PvpUp Economy' as provider.");
+        }
+
         this.saveDefaultConfig();
 
         PerkFactory.getInstance().init();
@@ -52,6 +59,7 @@ public class AbstractPlugin extends JavaPlugin {
         this.getServer().getPluginManager().registerEvents(new EntityDamageByEntityListener(), this);
         this.getServer().getPluginManager().registerEvents(new PlayerDeathListener(), this);
         this.getServer().getPluginManager().registerEvents(new PlayerRespawnListener(), this);
+        this.getServer().getPluginManager().registerEvents(new ProjectileLaunchListener(), this);
         this.getServer().getPluginManager().registerEvents(new PlayerQuitListener(), this);
 
         this.getServer().getPluginManager().registerEvents(new WallBorderListener(), this);
@@ -70,6 +78,8 @@ public class AbstractPlugin extends JavaPlugin {
                     if (pendingToClearActionBar.getOrDefault(player.getUniqueId(), now) > now) continue;
 
                     pendingToClearActionBar.remove(player.getUniqueId());
+
+                    ActionBar.clearActionBar(player);
                 }
             }
         }.runTaskTimerAsynchronously(this, 20, 5);

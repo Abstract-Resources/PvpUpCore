@@ -20,7 +20,7 @@ public class Profile {
 
     private int kills = 0;
     private int deaths = 0;
-    private int coins = 0;
+    private double coins = 0;
     private int points = 0;
 
     private int currentPerk = 0;

@@ -35,11 +35,13 @@ public class PlayerInteractListener implements Listener {
         Profile profile = Profile.byPlayer(player);
         if (profile == null || !profile.isAdmin()) return;
 
-        Arena arena = ArenaFactory.getInstance().byWorld(player.getWorld());
+        Arena arena = ArenaFactory.getInstance().byName(profile.getCurrentArenaEditing());
         if (arena == null) return;
 
         if (itemStack.getType() == Material.WOOD_AXE) {
             this.handleSpawnCuboid(player, arena, block.getLocation(), ev.getAction() == Action.LEFT_CLICK_BLOCK);
+        } else if (itemStack.getType() == Material.IRON_AXE) {
+            this.handlePortalCuboid(player, arena, block.getLocation(), ev.getAction() == Action.LEFT_CLICK_BLOCK);
         }
     }
 
@@ -56,5 +58,20 @@ public class PlayerInteractListener implements Listener {
         arena.setSpawnCuboid(cuboid);
 
         player.sendMessage(ChatColor.GREEN + (first ? "First" : "Second") + " spawn corner was successfully changed!");
+    }
+
+    private void handlePortalCuboid(@NonNull Player player, @NonNull Arena arena, @NonNull Location location, boolean first) {
+        ArenaCuboid cuboid = arena.getPortalCuboid();
+        if (cuboid == null) cuboid = new ArenaCuboid(player.getWorld(), 0, 0, 0, 0, 0, 0);
+
+        if (first) {
+            cuboid.setFirstCorner(location);
+        } else {
+            cuboid.setSecondCorner(location);
+        }
+
+        arena.setPortalCuboid(cuboid);
+
+        player.sendMessage(ChatColor.GREEN + (first ? "First" : "Second") + " portal corner was successfully changed!");
     }
 }

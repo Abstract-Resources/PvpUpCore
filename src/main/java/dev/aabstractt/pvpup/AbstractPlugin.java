@@ -3,6 +3,7 @@ package dev.aabstractt.pvpup;
 import com.cryptomorin.xseries.messages.ActionBar;
 import com.google.common.collect.Maps;
 import dev.aabstractt.pvpup.command.PvpUpCommand;
+import dev.aabstractt.pvpup.datasource.MySQLDataSource;
 import dev.aabstractt.pvpup.factory.ArenaFactory;
 import dev.aabstractt.pvpup.factory.PerkFactory;
 import dev.aabstractt.pvpup.hook.VaultHook;
@@ -19,6 +20,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.scheduler.BukkitRunnable;
 
+import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
@@ -44,6 +46,11 @@ public class AbstractPlugin extends JavaPlugin {
 
         this.saveDefaultConfig();
 
+        File file = new File(this.getDataFolder(), "hikari.properties");
+        if (!file.exists()) this.saveResource("hikari.properties", true);
+
+        MySQLDataSource.getInstance().init(file);
+
         PerkFactory.getInstance().init();
         ArenaFactory.getInstance().init();
 
@@ -52,6 +59,7 @@ public class AbstractPlugin extends JavaPlugin {
                 this.getConfig().getConfigurationSection("scoreboard.lines")
         );
 
+        this.getServer().getPluginManager().registerEvents(new AsyncPlayerPreLoginListener(), this);
         this.getServer().getPluginManager().registerEvents(new PlayerJoinListener(), this);
         this.getServer().getPluginManager().registerEvents(new PlayerInteractListener(), this);
         this.getServer().getPluginManager().registerEvents(new PlayerMoveListener(), this);

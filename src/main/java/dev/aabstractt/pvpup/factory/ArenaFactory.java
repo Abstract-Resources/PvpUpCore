@@ -6,6 +6,7 @@ import dev.aabstractt.pvpup.object.ArenaCuboid;
 import lombok.Getter;
 import lombok.NonNull;
 import org.bukkit.Bukkit;
+import org.bukkit.Location;
 import org.bukkit.World;
 import org.bukkit.WorldCreator;
 import org.bukkit.configuration.Configuration;
@@ -77,6 +78,20 @@ public class ArenaFactory {
         return this.arenas.stream()
                 .filter(arena -> arena.getWorldName().equalsIgnoreCase(world.getName()))
                 .findAny().orElse(null);
+    }
+
+    public @Nullable Arena byName(@Nullable String worldName) {
+        if (worldName == null) return null;
+
+        World world = Bukkit.getWorld(worldName);
+
+        return this.byWorld(world);
+    }
+
+    public @Nullable Arena byPortal(@NonNull Location location) {
+        return this.arenas.stream()
+                .filter(arena -> arena.getPortalCuboid() != null && arena.getPortalCuboid().isInCuboid(location))
+                .findFirst().orElse(null);
     }
 
     public boolean isArena(@NonNull String worldName) {

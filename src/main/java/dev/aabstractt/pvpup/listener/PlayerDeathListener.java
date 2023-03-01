@@ -52,11 +52,11 @@ public class PlayerDeathListener implements Listener {
         CosmeticsHook.handleDeathSound(player);
         CosmeticsHook.handleDeathHologram(player,
                 killer == null,
-                "player", player.getName(),
-                "killer", killer != null ? killer.getName() : "none",
-                "coins", String.valueOf(profile.getCoins()),
-                "deaths", String.valueOf(profile.getDeaths()),
-                "kills", String.valueOf(profile.getKills())
+                player.getName(),
+                killer != null ? killer.getName() : "none",
+                String.valueOf(profile.getCoins()),
+                String.valueOf(profile.getDeaths()),
+                String.valueOf(profile.getKills())
         );
 
         player.teleport(player.getWorld().getSpawnLocation());

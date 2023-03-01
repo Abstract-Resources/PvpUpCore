@@ -1,9 +1,14 @@
 package dev.aabstractt.pvpup.listener;
 
 import dev.aabstractt.pvpup.factory.ArenaFactory;
+import dev.aabstractt.pvpup.factory.PerkFactory;
+import dev.aabstractt.pvpup.object.Arena;
+import dev.aabstractt.pvpup.object.Perk;
+import dev.aabstractt.pvpup.object.Profile;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.Material;
+import org.bukkit.World;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -20,7 +25,41 @@ public class PlayerMoveListener implements Listener {
         Player player = ev.getPlayer();
 
         Location to = ev.getTo();
-        if (!ArenaFactory.getInstance().isArena(to.getWorld().getName())) return;
+        if (!ArenaFactory.getInstance().isArena(to.getWorld().getName())) {
+            Arena arena = ArenaFactory.getInstance().byPortal(to);
+
+            if (arena == null) return;
+
+            World world = Bukkit.getWorld(arena.getWorldName());
+            if (world == null) return;
+
+            player.setFallDistance(0);
+
+            player.setHealth(player.getMaxHealth());
+            player.setFoodLevel(20);
+
+            player.getInventory().clear();
+            player.getActivePotionEffects().clear();
+
+            player.teleport(world.getSpawnLocation());
+
+            Profile profile = Profile.byPlayer(player);
+            if (profile == null) return;
+
+            profile.flush();
+
+            Perk perk = PerkFactory.getInstance().byPoints(profile.getPoints());
+            profile.setCurrentPerk(perk != null ? perk.getDownLevel() : 0);
+
+            perk = PerkFactory.getInstance().byId(profile.getCurrentPerk());
+            if (perk != null) {
+                perk.apply(player);
+
+                profile.setPoints(perk.getMinPoints());
+            }
+
+            return;
+        }
 
         int toX = to.getBlockX();
         int toY = to.getBlockY();

@@ -29,8 +29,10 @@ public class Profile {
 
     private boolean admin = false;
 
-    public static void store(@NonNull Player player) {
-        profilesStored.put(player.getUniqueId(), new Profile(player.getUniqueId(), player.getName()));
+    private @Nullable String currentArenaEditing = null;
+
+    public static void store(@NonNull Profile profile) {
+        profilesStored.put(profile.getUniqueId(), profile);
     }
 
     public void flush() {

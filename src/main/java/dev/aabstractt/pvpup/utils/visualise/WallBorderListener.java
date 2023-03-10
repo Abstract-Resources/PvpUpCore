@@ -42,14 +42,13 @@ public class WallBorderListener implements Listener {
         Arena arena = ArenaFactory.getInstance().byWorld(toWorld);
         if (arena == null) return;
 
+        Profile profile = Profile.byPlayer(player);
+        if (profile == null) return;
+
         ArenaCuboid cuboid = arena.getSpawnCuboid();
         if (cuboid == null) return;
         if (cuboid.isInCuboid(player)) return;
         if (cuboid.isInCuboid(new Location(toWorld, toX, toY, toZ))) return;
-
-        Profile profile = Profile.byPlayer(player);
-        if (profile == null) return;
-        if (System.currentTimeMillis() > profile.getCombatExpireAt()) return;
 
         final VisualType visualType = VisualType.SPAWN_BORDER;
 
@@ -61,6 +60,8 @@ public class WallBorderListener implements Listener {
                             Math.abs(toY - other.getBlockY()) > WALL_BORDER_HEIGHT_ABOVE_DIFF ||
                             Math.abs(toZ - other.getBlockZ()) > WALL_BORDER_HORIZONTAL_DISTANCE);
         });
+        
+        if (System.currentTimeMillis() > profile.getCombatExpireAt()) return;
 
         // Values used to calculate the new visual cuboid height.
         int minHeight = toY - WALL_BORDER_HEIGHT_BELOW_DIFF;

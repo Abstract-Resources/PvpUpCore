@@ -50,6 +50,15 @@ public class ArenaCuboid implements Iterable<Block>, Cloneable, ConfigurationSer
         this.l2 = l2;
     }
 
+    public void recalculate() {
+        this.x1 = Math.min(this.x1, this.x2);
+        this.x2 = Math.max(this.x1, this.x2);
+        this.y1 = Math.min(this.y1, this.y2);
+        this.y2 = Math.max(this.y1, this.y2);
+        this.z1 = Math.min(this.z1, this.z2);
+        this.z2 = Math.max(this.z1, this.z2);
+    }
+
     public boolean isInCuboid(Location location) {
         return this.contains(location);
     }

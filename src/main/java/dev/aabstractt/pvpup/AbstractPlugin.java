@@ -20,6 +20,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.scheduler.BukkitRunnable;
 
+import javax.annotation.Nullable;
 import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
@@ -47,7 +48,7 @@ public class AbstractPlugin extends JavaPlugin {
         this.saveDefaultConfig();
 
         File file = new File(this.getDataFolder(), "hikari.properties");
-        if (!file.exists()) this.saveResource("hikari.properties", true);
+        if (!file.exists()) this.saveResource("hikari.properties", false);
 
         MySQLDataSource.getInstance().init(file);
 
@@ -65,6 +66,7 @@ public class AbstractPlugin extends JavaPlugin {
         this.getServer().getPluginManager().registerEvents(new PlayerMoveListener(), this);
         this.getServer().getPluginManager().registerEvents(new PlayerChangedWorldListener(), this);
         this.getServer().getPluginManager().registerEvents(new EntityDamageByEntityListener(), this);
+        this.getServer().getPluginManager().registerEvents(new EntityDamageListener(), this);
         this.getServer().getPluginManager().registerEvents(new PlayerDeathListener(), this);
         this.getServer().getPluginManager().registerEvents(new PlayerRespawnListener(), this);
         this.getServer().getPluginManager().registerEvents(new ProjectileLaunchListener(), this);
@@ -98,6 +100,10 @@ public class AbstractPlugin extends JavaPlugin {
         for (String key : section.getKeys(false)) {
             messages.put(key, section.getString(key));
         }
+    }
+
+    public static @Nullable String getDefaultWorldName() {
+        return instance.getConfig().getString("default-world");
     }
 
     public static void broadcastActionBar(@NonNull World world, @NonNull String message) {

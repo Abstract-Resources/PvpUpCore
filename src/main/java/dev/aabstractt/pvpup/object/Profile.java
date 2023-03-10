@@ -1,9 +1,12 @@
 package dev.aabstractt.pvpup.object;
 
 import com.google.common.collect.Maps;
+import dev.aabstractt.pvpup.AbstractPlugin;
+import dev.aabstractt.pvpup.datasource.MySQLDataSource;
 import lombok.Data;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
+import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 
 import javax.annotation.Nullable;
@@ -38,11 +41,14 @@ public class Profile {
     public void flush() {
         this.currentPerk = 0;
         this.combatExpireAt = 0;
-        this.admin = false;
     }
 
     public static void flush(@NonNull Player player) {
-        profilesStored.remove(player.getUniqueId());
+        Profile profile = profilesStored.remove(player.getUniqueId());
+
+        if (profile == null) return;
+
+        Bukkit.getScheduler().runTaskAsynchronously(AbstractPlugin.getInstance(), () -> MySQLDataSource.getInstance().updateProfile(profile));
     }
 
     public static @Nullable Profile byPlayer(@NonNull Player player) {

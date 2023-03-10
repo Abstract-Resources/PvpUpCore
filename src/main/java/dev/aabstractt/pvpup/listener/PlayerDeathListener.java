@@ -7,6 +7,8 @@ import dev.aabstractt.pvpup.hook.CosmeticsHook;
 import dev.aabstractt.pvpup.object.Arena;
 import dev.aabstractt.pvpup.object.Perk;
 import dev.aabstractt.pvpup.object.Profile;
+import dev.aabstractt.pvpup.utils.visualise.VisualType;
+import dev.aabstractt.pvpup.utils.visualise.VisualiseHandler;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -27,10 +29,15 @@ public class PlayerDeathListener implements Listener {
         player.setHealth(player.getMaxHealth());
         player.setFoodLevel(20);
 
+        player.getInventory().setArmorContents(null);
         player.getInventory().clear();
         player.getActivePotionEffects().clear();
 
-        Bukkit.getScheduler().scheduleSyncDelayedTask(AbstractPlugin.getInstance(), () -> player.spigot().respawn(), 10);
+        Bukkit.getScheduler().scheduleSyncDelayedTask(AbstractPlugin.getInstance(), () -> {
+            player.spigot().respawn();
+
+            VisualiseHandler.getInstance().clearVisualBlocks(player, VisualType.SPAWN_BORDER, visualBlock -> true);
+        }, 10);
 
         Profile profile = Profile.byPlayer(player);
         if (profile == null) return;
@@ -39,6 +46,8 @@ public class PlayerDeathListener implements Listener {
 
         Perk perk = PerkFactory.getInstance().byPoints(profile.getPoints());
         profile.setCurrentPerk(perk != null ? perk.getDownLevel() : 0);
+
+        System.out.println("Down level is ? " + profile.getCurrentPerk());
 
         perk = PerkFactory.getInstance().byId(profile.getCurrentPerk());
         if (perk != null) {

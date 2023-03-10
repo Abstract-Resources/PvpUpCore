@@ -39,7 +39,7 @@ public final class MySQLDataSource {
         }
 
         try (Connection connection = this.dataSource.getConnection()) {
-            try (PreparedStatement preparedStatement = connection.prepareStatement("CREATE TABLE IF NOT EXISTS profiles (rowId INT PRIMARY KEY AUTO_INCREMENT, uuid TEXT, coins INT, kills INT, deaths INT, play_time INT)")) {
+            try (PreparedStatement preparedStatement = connection.prepareStatement("CREATE TABLE IF NOT EXISTS pvpup_profiles (rowId INT PRIMARY KEY AUTO_INCREMENT, uuid TEXT, coins INT, kills INT, deaths INT, play_time INT)")) {
                 preparedStatement.executeUpdate();
             }
         } catch (Exception e) {
@@ -51,7 +51,9 @@ public final class MySQLDataSource {
         if (this.disconnected() || this.dataSource == null) return this.reconnect() ? this.loadProfile(uuidParsed, name) : null;
 
         try (Connection connection = this.dataSource.getConnection()) {
-            try (PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM profiles WHERE uuid = ?")) {
+            try (PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM pvpup_profiles WHERE uuid = ?")) {
+                preparedStatement.setString(1, uuidParsed.toString());
+
                 try (ResultSet resultSet = preparedStatement.executeQuery()) {
                     if (resultSet.next()) {
                         Profile profile = new Profile(uuidParsed, name);
@@ -79,7 +81,7 @@ public final class MySQLDataSource {
         }
 
         try (Connection connection = this.dataSource.getConnection()) {
-            try (PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO profiles (uuid, coins, deaths, kills, play_time) VALUES (?, ?, ?, ?, ?)")) {
+            try (PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO pvpup_profiles (uuid, coins, deaths, kills, play_time) VALUES (?, ?, ?, ?, ?)")) {
                 preparedStatement.setString(1, uuidParsed.toString());
                 preparedStatement.setInt(2, 0);
                 preparedStatement.setInt(3, 0);
@@ -101,7 +103,7 @@ public final class MySQLDataSource {
         }
 
         try (Connection connection = this.dataSource.getConnection()) {
-            try (PreparedStatement preparedStatement = connection.prepareStatement("UPDATE profiles SET coins = ?, kills = ?, deaths = ? WHERE uuid = ?")) {
+            try (PreparedStatement preparedStatement = connection.prepareStatement("UPDATE pvpup_profiles SET coins = ?, kills = ?, deaths = ? WHERE uuid = ?")) {
                 preparedStatement.setDouble(1, profile.getCoins());
                 preparedStatement.setInt(2, profile.getKills());
                 preparedStatement.setInt(3, profile.getDeaths());

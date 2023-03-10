@@ -11,4 +11,14 @@ public class Arena {
 
     @Setter private @Nullable ArenaCuboid spawnCuboid = null;
     @Setter private @Nullable ArenaCuboid portalCuboid = null;
+
+    public void recalculate() {
+        if (this.spawnCuboid != null) {
+            this.spawnCuboid.recalculate();
+        }
+
+        if (this.portalCuboid != null) {
+            this.portalCuboid.recalculate();
+        }
+    }
 }

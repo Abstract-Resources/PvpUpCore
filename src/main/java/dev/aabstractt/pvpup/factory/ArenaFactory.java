@@ -53,7 +53,11 @@ public class ArenaFactory {
     }
 
     public void registerNewArena(@NonNull Arena arena, boolean overwrite) {
-        this.arenas.add(arena);
+        if (!this.isArena(arena.getWorldName())) {
+            this.arenas.add(arena);
+        }
+
+        arena.recalculate();
 
         if (!overwrite) return;
 

@@ -37,5 +37,3 @@ messages:
   LEVELS_MENU_ITEM_LORE_PROGRESS: "&d\n&7Puntos necesarios: &b{%0} puntos\n&7Actualmente tienes: &b{%2}\n&a\n&7Este nivel contiene:\n&f{%1}\n&7\n&eNecesitas {%3} puntos para alcanzar este nivel"
   LEVELS_MENU_ITEM_LORE_LOCKED: "&d\n&7Puntos necesarios: &b{%0} puntos\n&7Actualmente tienes: &b{%2}\n&a\n&7Este nivel contiene:\n&f{%1}\n&7\n&cAlcanza el nivel anterior para\n&ccomenzar con este nivel"
   WOOD_AXE: 'Hacha de madera'
-
-perks-level:

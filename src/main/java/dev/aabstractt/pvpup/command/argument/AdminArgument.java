@@ -18,23 +18,30 @@ public class AdminArgument extends PlayerArgument {
 
     @Override
     public void onPlayerExecute(@NonNull Player sender, @NonNull String commandLabel, @NonNull String[] args) {
-        Profile profile = Profile.byPlayer(sender);
-
-        if (profile == null) {
-            sender.sendMessage(ChatColor.RED + "An error occurred");
+        if (args.length == 0) {
+            sender.sendMessage(ChatColor.RED + "Usage: /" + commandLabel + " <world>");
 
             return;
         }
 
-        Arena arena = ArenaFactory.getInstance().byWorld(sender.getWorld());
+        Arena arena = ArenaFactory.getInstance().byName(args[0]);
         if (arena == null) {
             sender.sendMessage(ChatColor.RED + "This world not is a arena!");
 
             return;
         }
 
+        Profile profile = Profile.byPlayer(sender);
+        if (profile == null) {
+            sender.sendMessage(ChatColor.RED + "An error occurred");
+
+            return;
+        }
+
         boolean admin = profile.isAdmin();
         profile.setAdmin(!admin);
+
+        profile.setCurrentArenaEditing(!admin ? arena.getWorldName() : null);
 
         if (!admin) {
             sender.sendMessage(ChatColor.GREEN + "Admin mode successfully enabled!");

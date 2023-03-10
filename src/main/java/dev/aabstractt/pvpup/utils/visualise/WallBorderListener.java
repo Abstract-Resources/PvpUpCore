@@ -60,7 +60,7 @@ public class WallBorderListener implements Listener {
                             Math.abs(toY - other.getBlockY()) > WALL_BORDER_HEIGHT_ABOVE_DIFF ||
                             Math.abs(toZ - other.getBlockZ()) > WALL_BORDER_HORIZONTAL_DISTANCE);
         });
-        
+
         if (System.currentTimeMillis() > profile.getCombatExpireAt()) return;
 
         // Values used to calculate the new visual cuboid height.

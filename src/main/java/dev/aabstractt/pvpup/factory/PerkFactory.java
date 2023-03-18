@@ -18,7 +18,7 @@ public class PerkFactory {
 
     @Getter private final static @NonNull PerkFactory instance = new PerkFactory();
 
-    private final Set<Perk> perks = new HashSet<>();
+    private final Set<@NonNull Perk> perks = new HashSet<>();
 
     public void init() {
         Configuration configuration = YamlConfiguration.loadConfiguration(new File(AbstractPlugin.getInstance().getDataFolder(), "perks.yml"));

@@ -75,16 +75,30 @@ public class Perk {
 
         if (configurationSection == null) return contents;
 
-        for (String key : configurationSection.getKeys(false)) {
-            ConfigurationSection section = configurationSection.getConfigurationSection(key);
+        for (String slot : configurationSection.getKeys(false)) {
+            ConfigurationSection mainSection = configurationSection.getConfigurationSection(slot);
 
-            if (section == null) continue;
+            if (mainSection == null) continue;
 
-            contents.put(Integer.parseInt(key), new ItemStack(
-                    Material.valueOf(section.getString("material")),
-                    section.getInt("amount"),
-                    (short) section.getInt("damage", 0))
+            ItemStack itemStack = new ItemStack(
+                    Material.valueOf(mainSection.getString("material")),
+                    mainSection.getInt("amount"),
+                    (short) mainSection.getInt("damage", 0)
             );
+
+            List<List<Object>> enchants = (List<List<Object>>) mainSection.getList("enchants");
+            if (enchants == null) continue;
+
+            for (List<Object> enchantmentData : enchants) {
+                if (enchantmentData == null || enchantmentData.isEmpty()) continue;
+
+                Enchantment enchantment = Enchantment.getByName((String) enchantmentData.get(0));
+                if (enchantment == null) continue;
+
+                itemStack.addEnchantment(enchantment, (Integer) enchantmentData.get(1));
+            }
+
+            contents.put(Integer.parseInt(slot), itemStack);
         }
 
         return contents;

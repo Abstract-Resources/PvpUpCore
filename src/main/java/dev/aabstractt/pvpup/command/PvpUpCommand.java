@@ -1,13 +1,12 @@
 package dev.aabstractt.pvpup.command;
 
-import dev.aabstractt.pvpup.command.argument.AdminArgument;
-import dev.aabstractt.pvpup.command.argument.CreateArenaArgument;
-import dev.aabstractt.pvpup.command.argument.PerksArgument;
-import dev.aabstractt.pvpup.command.argument.WorldArgument;
+import dev.aabstractt.pvpup.command.argument.*;
+import lombok.NonNull;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.Arrays;
 import java.util.HashSet;
@@ -20,17 +19,21 @@ public class PvpUpCommand implements CommandExecutor {
     public PvpUpCommand() {
         this.registerArgument(
                 new CreateArenaArgument("create", "pvpup.admin"),
-                new AdminArgument("admin", "pvpup.admin"),
                 new WorldArgument("world", "pvpup.admin"),
+                new ForceLevelArgument("forcelevel", "pvpup.admin"),
+                new DeletePortalArgument("deleteportal", "pvpup.admin"),
+                new SetMinArgument("setmin", "pvpup.admin"),
+                new SetMaxArgument("setmax", "pvpup.admin"),
+                new SaveArgument("save", "pvpup.admin"),
                 new PerksArgument("perks", null)
         );
     }
 
-    private void registerArgument(Argument... arguments) {
+    private void registerArgument(@NonNull Argument... arguments) {
         this.arguments.addAll(Arrays.asList(arguments));
     }
 
-    private Argument getArgument(String argumentLabel) {
+    private @Nullable Argument getArgument(String argumentLabel) {
         return this.arguments.stream()
                 .filter(argument -> argument.getName().equalsIgnoreCase(argumentLabel))
                 .findAny().orElse(null);

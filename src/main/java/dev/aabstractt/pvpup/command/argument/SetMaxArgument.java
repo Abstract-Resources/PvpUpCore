@@ -3,23 +3,22 @@ package dev.aabstractt.pvpup.command.argument;
 import dev.aabstractt.pvpup.command.PlayerArgument;
 import dev.aabstractt.pvpup.factory.ArenaFactory;
 import dev.aabstractt.pvpup.object.Arena;
-import dev.aabstractt.pvpup.object.Profile;
 import lombok.NonNull;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 
 import javax.annotation.Nullable;
 
-public class AdminArgument extends PlayerArgument {
+public final class SetMaxArgument extends PlayerArgument {
 
-    public AdminArgument(@NonNull String name, @Nullable String permission) {
+    public SetMaxArgument(@NonNull String name, @Nullable String permission) {
         super(name, permission);
     }
 
     @Override
     public void onPlayerExecute(@NonNull Player sender, @NonNull String commandLabel, @NonNull String[] args) {
-        if (args.length == 0) {
-            sender.sendMessage(ChatColor.RED + "Usage: /" + commandLabel + " <world>");
+        if (args.length < 2) {
+            sender.sendMessage(ChatColor.RED + "Usage: /" + commandLabel + " setmax <arena> <spawn|portal>");
 
             return;
         }
@@ -31,26 +30,20 @@ public class AdminArgument extends PlayerArgument {
             return;
         }
 
-        Profile profile = Profile.byPlayer(sender);
-        if (profile == null) {
-            sender.sendMessage(ChatColor.RED + "An error occurred");
+        if (!args[1].equalsIgnoreCase("portal") && !args[1].equalsIgnoreCase("spawn")) {
+            sender.sendMessage(ChatColor.RED + "Usage: /" + commandLabel + " setmax <arena> <spawn|portal>");
 
             return;
         }
 
-        boolean admin = profile.isAdmin();
-        profile.setAdmin(!admin);
-
-        profile.setCurrentArenaEditing(!admin ? arena.getWorldName() : null);
-
-        if (!admin) {
-            sender.sendMessage(ChatColor.GREEN + "Admin mode successfully enabled!");
-
-            return;
+        if (args[1].equalsIgnoreCase("portal")) {
+            Arena.handlePortalCuboid(false, arena, sender.getLocation());
+        } else {
+            Arena.handleSpawnCuboid(false, arena, sender.getLocation());
         }
 
         ArenaFactory.getInstance().registerNewArena(arena, true);
 
-        sender.sendMessage(ChatColor.RED + "Admin mode successfully disabled!");
+        sender.sendMessage(ChatColor.GREEN + "Second " + args[1] + " corner was successfully changed!");
     }
 }

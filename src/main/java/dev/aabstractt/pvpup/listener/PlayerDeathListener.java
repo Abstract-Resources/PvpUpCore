@@ -47,8 +47,6 @@ public class PlayerDeathListener implements Listener {
         Perk perk = PerkFactory.getInstance().byPoints(profile.getPoints());
         profile.setCurrentPerk(perk != null ? perk.getDownLevel() : 0);
 
-        System.out.println("Down level is ? " + profile.getCurrentPerk());
-
         perk = PerkFactory.getInstance().byId(profile.getCurrentPerk());
         if (perk != null) {
             perk.apply(player);
@@ -75,6 +73,8 @@ public class PlayerDeathListener implements Listener {
 
             return;
         }
+
+        killer.setHealth(killer.getMaxHealth());
 
         profile = Profile.byPlayer(killer);
         if (profile == null) return;

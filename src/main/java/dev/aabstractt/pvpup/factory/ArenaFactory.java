@@ -33,6 +33,12 @@ public class ArenaFactory {
 
         Configuration configuration = YamlConfiguration.loadConfiguration(this.file);
 
+        String defaultWorldName = AbstractPlugin.getDefaultWorldName();
+        if (defaultWorldName == null) return;
+
+        World defaultWorld = Bukkit.getWorld(defaultWorldName);
+        if (defaultWorld == null) return;
+
         for (String worldName : configuration.getKeys(false)) {
             ConfigurationSection section = configuration.getConfigurationSection(worldName);
 
@@ -47,7 +53,7 @@ public class ArenaFactory {
             this.registerNewArena(new Arena(
                     worldName,
                     ArenaCuboid.fromSection(world, section.getConfigurationSection("spawn-cuboid")),
-                    ArenaCuboid.fromSection(world, section.getConfigurationSection("portal-cuboid"))
+                    ArenaCuboid.fromSection(defaultWorld, section.getConfigurationSection("portal-cuboid"))
             ), false);
         }
     }
@@ -66,10 +72,10 @@ public class ArenaFactory {
         configuration.set(arena.getWorldName() + ".custom_name", arena.getWorldName());
 
         ArenaCuboid cuboid = arena.getSpawnCuboid();
-        if (cuboid != null) configuration.set(arena.getWorldName() + ".spawn-cuboid", cuboid.serialize());
+        configuration.set(arena.getWorldName() + ".spawn-cuboid", cuboid != null ? cuboid.serialize() : null);
 
         cuboid = arena.getPortalCuboid();
-        if (cuboid != null) configuration.set(arena.getWorldName() + ".portal-cuboid", cuboid.serialize());
+        configuration.set(arena.getWorldName() + ".portal-cuboid", cuboid != null ? cuboid.serialize() : null);
 
         try {
             configuration.save(this.file);

@@ -32,7 +32,7 @@
     0: # inventory slot
       material: WOOD_SWORD
       amount: 1
-      enchants: 
+      enchants: []
 
     38: # slot boots
       material: LEATHER_CHESTPLATE
@@ -48,7 +48,7 @@
     0: # inventory slot
       material: WOOD_SWORD
       amount: 1
-      enchants: 
+      enchants: []
 
     38: # slot boots
       material: LEATHER_CHESTPLATE
@@ -68,7 +68,7 @@
     0: # inventory slot
       material: WOOD_SWORD
       amount: 1
-      enchants: 
+      enchants: []
 
     38: # slot boots
       material: LEATHER_CHESTPLATE
@@ -92,7 +92,7 @@
     0: # inventory slot
       material: WOOD_SWORD
       amount: 1
-      enchants: 
+      enchants: []
 
     38: # slot boots
       material: LEATHER_CHESTPLATE
@@ -120,7 +120,7 @@
     0: # inventory slot
       material: WOOD_AXE
       amount: 1
-      enchants: [SHARPNESS, 1]
+      enchants: [[DAMAGE_ALL, 1]]
 
     38: # slot boots
       material: LEATHER_CHESTPLATE
@@ -146,7 +146,7 @@
     0: # inventory slot
       material: WOOD_SWORD
       amount: 1
-      enchants: [DAMAGE_ALL, 1]
+      enchants: [[DAMAGE_ALL, 1]]
 
     38: # slot boots
       material: LEATHER_CHESTPLATE
@@ -172,12 +172,12 @@
     0: # inventory slot
       material: WOOD_SWORD
       amount: 1
-      enchants: [DAMAGE_ALL, 1]
+      enchants: [[DAMAGE_ALL, 1]]
 
     38: # slot boots
       material: LEATHER_CHESTPLATE
       amount: 1
-      enchants: [PROTECTION_ENVIRONMENTAL, 1]      
+      enchants: [[PROTECTION_ENVIRONMENTAL, 1]]      
     36: # slot boots
       material: LEATHER_BOOTS
       amount: 1
@@ -198,16 +198,16 @@
     0: # inventory slot
       material: WOOD_SWORD
       amount: 1
-      enchants: [DAMAGE_ALL, 1]
+      enchants: [[DAMAGE_ALL, 1]]
 
     38: # slot boots
       material: LEATHER_CHESTPLATE
       amount: 1
-      enchants: [PROTECTION_ENVIRONMENTAL, 1]      
+      enchants: [[PROTECTION_ENVIRONMENTAL, 1]]      
     36: # slot boots
       material: LEATHER_BOOTS
       amount: 1
-      enchants: [PROTECTION_ENVIRONMENTAL, 1]
+      enchants: [[PROTECTION_ENVIRONMENTAL, 1]]
     39: # slot boots
       material: LEATHER_HELMET
       amount: 1
@@ -224,20 +224,20 @@
     0: # inventory slot
       material: WOOD_SWORD
       amount: 1
-      enchants: [DAMAGE_ALL, 1]
+      enchants: [[DAMAGE_ALL, 1]]
 
     38: # slot boots
       material: LEATHER_CHESTPLATE
       amount: 1
-      enchants: [PROTECTION_ENVIRONMENTAL, 1]      
+      enchants: [[PROTECTION_ENVIRONMENTAL, 1]]      
     36: # slot boots
       material: LEATHER_BOOTS
       amount: 1
-      enchants: [PROTECTION_ENVIRONMENTAL, 1]
+      enchants: [[PROTECTION_ENVIRONMENTAL, 1]]
     39: # slot boots
       material: LEATHER_HELMET
       amount: 1
-      enchants: [PROTECTION_ENVIRONMENTAL, 1]
+      enchants: [[PROTECTION_ENVIRONMENTAL, 1]]
     37: # slot boots
       material: LEATHER_LEGGINGS
       amount: 1
@@ -250,24 +250,24 @@
     0: # inventory slot
       material: WOOD_SWORD
       amount: 1
-      enchants: [DAMAGE_ALL, 1]
+      enchants: [[DAMAGE_ALL, 1]]
 
     38: # slot boots
       material: LEATHER_CHESTPLATE
       amount: 1
-      enchants: [PROTECTION_ENVIRONMENTAL, 1]      
+      enchants: [[PROTECTION_ENVIRONMENTAL, 1]]      
     36: # slot boots
       material: LEATHER_BOOTS
       amount: 1
-      enchants: [PROTECTION_ENVIRONMENTAL, 1]
+      enchants: [[PROTECTION_ENVIRONMENTAL, 1]]
     39: # slot boots
       material: LEATHER_HELMET
       amount: 1
-      enchants: [PROTECTION_ENVIRONMENTAL, 1]
+      enchants: [[PROTECTION_ENVIRONMENTAL, 1]]
     37: # slot boots
       material: LEATHER_LEGGINGS
       amount: 1
-      enchants: [PROTECTION_ENVIRONMENTAL, 1]  
+      enchants: [[PROTECTION_ENVIRONMENTAL, 1]]  
 12: # level
   min-points: 12
   max-points: 12
@@ -276,24 +276,24 @@
     0: # inventory slot
       material: GOLD_AXE
       amount: 1
-      enchants: [DAMAGE_ALL, 2]
+      enchants: [[DAMAGE_ALL, 2]]
 
     38: # slot boots
       material: LEATHER_CHESTPLATE
       amount: 1
-      enchants: [PROTECTION_ENVIRONMENTAL, 1]      
+      enchants: [[PROTECTION_ENVIRONMENTAL, 1]]      
     36: # slot boots
       material: LEATHER_BOOTS
       amount: 1
-      enchants: [PROTECTION_ENVIRONMENTAL, 1]
+      enchants: [[PROTECTION_ENVIRONMENTAL, 1]]
     39: # slot boots
       material: LEATHER_HELMET
       amount: 1
-      enchants: [PROTECTION_ENVIRONMENTAL, 1]
+      enchants: [[PROTECTION_ENVIRONMENTAL, 1]]
     37: # slot boots
       material: LEATHER_LEGGINGS
       amount: 1
-      enchants: [PROTECTION_ENVIRONMENTAL, 1]   
+      enchants: [[PROTECTION_ENVIRONMENTAL, 1]]   
 13: # level
   min-points: 13
   max-points: 13
@@ -302,24 +302,24 @@
     0: # inventory slot
       material: GOLD_SWORD
       amount: 1
-      enchants: [DAMAGE_ALL, 2]
+      enchants: [[DAMAGE_ALL, 2]]
 
     38: # slot boots
       material: LEATHER_CHESTPLATE
       amount: 1
-      enchants: [PROTECTION_ENVIRONMENTAL, 1]      
+      enchants: [[PROTECTION_ENVIRONMENTAL, 1]]      
     36: # slot boots
       material: LEATHER_BOOTS
       amount: 1
-      enchants: [PROTECTION_ENVIRONMENTAL, 1]
+      enchants: [[PROTECTION_ENVIRONMENTAL, 1]]
     39: # slot boots
       material: LEATHER_HELMET
       amount: 1
-      enchants: [PROTECTION_ENVIRONMENTAL, 1]
+      enchants: [[PROTECTION_ENVIRONMENTAL, 1]]
     37: # slot boots
       material: LEATHER_LEGGINGS
       amount: 1
-      enchants: [PROTECTION_ENVIRONMENTAL, 1]
+      enchants: [[PROTECTION_ENVIRONMENTAL, 1]]
 14: # level
   min-points: 14
   max-points: 14
@@ -328,24 +328,24 @@
     0: # inventory slot
       material: GOLD_SWORD
       amount: 1
-      enchants: [DAMAGE_ALL, 2]
+      enchants: [[DAMAGE_ALL, 2]]
 
     38: # slot boots
       material: GOLD_CHESTPLATE
       amount: 1
-      enchants: [PROTECTION_ENVIRONMENTAL, 2]      
+      enchants: [[PROTECTION_ENVIRONMENTAL, 2]]      
     36: # slot boots
       material: LEATHER_BOOTS
       amount: 1
-      enchants: [PROTECTION_ENVIRONMENTAL, 1]
+      enchants: [[PROTECTION_ENVIRONMENTAL, 1]]
     39: # slot boots
       material: LEATHER_HELMET
       amount: 1
-      enchants: [PROTECTION_ENVIRONMENTAL, 1]
+      enchants: [[PROTECTION_ENVIRONMENTAL, 1]]
     37: # slot boots
       material: LEATHER_LEGGINGS
       amount: 1
-      enchants: [PROTECTION_ENVIRONMENTAL, 1] 
+      enchants: [[PROTECTION_ENVIRONMENTAL, 1]] 
 15: # level
   min-points: 15
   max-points: 15
@@ -354,24 +354,24 @@
     0: # inventory slot
       material: GOLD_SWORD
       amount: 1
-      enchants: [DAMAGE_ALL, 2]
+      enchants: [[DAMAGE_ALL, 2]]
 
     38: # slot boots
       material: GOLD_CHESTPLATE
       amount: 1
-      enchants: [PROTECTION_ENVIRONMENTAL, 2]      
+      enchants: [[PROTECTION_ENVIRONMENTAL, 2]]      
     36: # slot boots
       material: GOLD_BOOTS
       amount: 1
-      enchants: [PROTECTION_ENVIRONMENTAL, 2]
+      enchants: [[PROTECTION_ENVIRONMENTAL, 2]]
     39: # slot boots
       material: LEATHER_HELMET
       amount: 1
-      enchants: [PROTECTION_ENVIRONMENTAL, 1]
+      enchants: [[PROTECTION_ENVIRONMENTAL, 1]]
     37: # slot boots
       material: LEATHER_LEGGINGS
       amount: 1
-      enchants: [PROTECTION_ENVIRONMENTAL, 1]  
+      enchants: [[PROTECTION_ENVIRONMENTAL, 1]]  
 16: # level
   min-points: 16
   max-points: 16
@@ -380,24 +380,24 @@
     0: # inventory slot
       material: GOLD_SWORD
       amount: 1
-      enchants: [DAMAGE_ALL, 2]
+      enchants: [[DAMAGE_ALL, 2]]
 
     38: # slot boots
       material: GOLD_CHESTPLATE
       amount: 1
-      enchants: [PROTECTION_ENVIRONMENTAL, 2]      
+      enchants: [[PROTECTION_ENVIRONMENTAL, 2]]      
     36: # slot boots
       material: GOLD_BOOTS
       amount: 1
-      enchants: [PROTECTION_ENVIRONMENTAL, 2]
+      enchants: [[PROTECTION_ENVIRONMENTAL, 2]]
     39: # slot boots
       material: GOLD_HELMET
       amount: 1
-      enchants: [PROTECTION_ENVIRONMENTAL, 2]
+      enchants: [[PROTECTION_ENVIRONMENTAL, 2]]
     37: # slot boots
       material: LEATHER_LEGGINGS
       amount: 1
-      enchants: [PROTECTION_ENVIRONMENTAL, 1]
+      enchants: [[PROTECTION_ENVIRONMENTAL, 1]]
 17: # level
   min-points: 17
   max-points: 17
@@ -406,24 +406,24 @@
     0: # inventory slot
       material: GOLD_SWORD
       amount: 1
-      enchants: [DAMAGE_ALL, 2]
+      enchants: [[DAMAGE_ALL, 2]]
 
     38: # slot boots
       material: GOLD_CHESTPLATE
       amount: 1
-      enchants: [PROTECTION_ENVIRONMENTAL, 2]      
+      enchants: [[PROTECTION_ENVIRONMENTAL, 2]]      
     36: # slot boots
       material: GOLD_BOOTS
       amount: 1
-      enchants: [PROTECTION_ENVIRONMENTAL, 2]
+      enchants: [[PROTECTION_ENVIRONMENTAL, 2]]
     39: # slot boots
       material: GOLD_HELMET
       amount: 1
-      enchants: [PROTECTION_ENVIRONMENTAL, 2]
+      enchants: [[PROTECTION_ENVIRONMENTAL, 2]]
     37: # slot boots
       material: GOLD_LEGGINGS
       amount: 1
-      enchants: [PROTECTION_ENVIRONMENTAL, 2]
+      enchants: [[PROTECTION_ENVIRONMENTAL, 2]]
 18: # level
   min-points: 18
   max-points: 18
@@ -437,19 +437,19 @@
     38: # slot boots
       material: GOLD_CHESTPLATE
       amount: 1
-      enchants: [PROTECTION_ENVIRONMENTAL, 2]      
+      enchants: [[PROTECTION_ENVIRONMENTAL, 2]]      
     36: # slot boots
       material: GOLD_BOOTS
       amount: 1
-      enchants: [PROTECTION_ENVIRONMENTAL, 2]
+      enchants: [[PROTECTION_ENVIRONMENTAL, 2]]
     39: # slot boots
       material: GOLD_HELMET
       amount: 1
-      enchants: [PROTECTION_ENVIRONMENTAL, 2]
+      enchants: [[PROTECTION_ENVIRONMENTAL, 2]]
     37: # slot boots
       material: GOLD_LEGGINGS
       amount: 1
-      enchants: [PROTECTION_ENVIRONMENTAL, 2]      
+      enchants: [[PROTECTION_ENVIRONMENTAL, 2]]      
 19: # level
   min-points: 19
   max-points: 19
@@ -462,19 +462,19 @@
     38: # slot boots
       material: GOLD_CHESTPLATE
       amount: 1
-      enchants: [PROTECTION_ENVIRONMENTAL, 2]      
+      enchants: [[PROTECTION_ENVIRONMENTAL, 2]]      
     36: # slot boots
       material: GOLD_BOOTS
       amount: 1
-      enchants: [PROTECTION_ENVIRONMENTAL, 2]
+      enchants: [[PROTECTION_ENVIRONMENTAL, 2]]
     39: # slot boots
       material: GOLD_HELMET
       amount: 1
-      enchants: [PROTECTION_ENVIRONMENTAL, 2]
+      enchants: [[PROTECTION_ENVIRONMENTAL, 2]]
     37: # slot boots
       material: GOLD_LEGGINGS
       amount: 1
-      enchants: [PROTECTION_ENVIRONMENTAL, 2]
+      enchants: [[PROTECTION_ENVIRONMENTAL, 2]]
 20: # level
   min-points: 20
   max-points: 22
@@ -488,19 +488,19 @@
     38: # slot boots
       material: GOLD_CHESTPLATE
       amount: 1
-      enchants: [PROTECTION_ENVIRONMENTAL, 3]      
+      enchants: [[PROTECTION_ENVIRONMENTAL, 3]]      
     36: # slot boots
       material: GOLD_BOOTS
       amount: 1
-      enchants: [PROTECTION_ENVIRONMENTAL, 2]
+      enchants: [[PROTECTION_ENVIRONMENTAL, 2]]
     39: # slot boots
       material: GOLD_HELMET
       amount: 1
-      enchants: [PROTECTION_ENVIRONMENTAL, 2]
+      enchants: [[PROTECTION_ENVIRONMENTAL, 2]]
     37: # slot boots
       material: GOLD_LEGGINGS
       amount: 1
-      enchants: [PROTECTION_ENVIRONMENTAL, 2]
+      enchants: [[PROTECTION_ENVIRONMENTAL, 2]]
 21: # level
   min-points: 22
   max-points: 24
@@ -513,19 +513,19 @@
     38: # slot boots
       material: GOLD_CHESTPLATE
       amount: 1
-      enchants: [PROTECTION_ENVIRONMENTAL, 3]      
+      enchants: [[PROTECTION_ENVIRONMENTAL, 3]]      
     36: # slot boots
       material: GOLD_BOOTS
       amount: 1
-      enchants: [PROTECTION_ENVIRONMENTAL, 3]
+      enchants: [[PROTECTION_ENVIRONMENTAL, 3]]
     39: # slot boots
       material: GOLD_HELMET
       amount: 1
-      enchants: [PROTECTION_ENVIRONMENTAL, 2]
+      enchants: [[PROTECTION_ENVIRONMENTAL, 2]]
     37: # slot boots
       material: GOLD_LEGGINGS
       amount: 1
-      enchants: [PROTECTION_ENVIRONMENTAL, 2] 
+      enchants: [[PROTECTION_ENVIRONMENTAL, 2]] 
 22: # level
   min-points: 24
   max-points: 26
@@ -538,19 +538,19 @@
     38: # slot boots
       material: GOLD_CHESTPLATE
       amount: 1
-      enchants: [PROTECTION_ENVIRONMENTAL, 3]      
+      enchants: [[PROTECTION_ENVIRONMENTAL, 3]]      
     36: # slot boots
       material: GOLD_BOOTS
       amount: 1
-      enchants: [PROTECTION_ENVIRONMENTAL, 3]
+      enchants: [[PROTECTION_ENVIRONMENTAL, 3]]
     39: # slot boots
       material: GOLD_HELMET
       amount: 1
-      enchants: [PROTECTION_ENVIRONMENTAL, 3]
+      enchants: [[PROTECTION_ENVIRONMENTAL, 3]]
     37: # slot boots
       material: GOLD_LEGGINGS
       amount: 1
-      enchants: [PROTECTION_ENVIRONMENTAL, 2]  
+      enchants: [[PROTECTION_ENVIRONMENTAL, 2]]  
 23: # level
   min-points: 26
   max-points: 28
@@ -564,19 +564,19 @@
     38: # slot boots
       material: GOLD_CHESTPLATE
       amount: 1
-      enchants: [PROTECTION_ENVIRONMENTAL, 3]      
+      enchants: [[PROTECTION_ENVIRONMENTAL, 3]]      
     36: # slot boots
       material: GOLD_BOOTS
       amount: 1
-      enchants: [PROTECTION_ENVIRONMENTAL, 3]
+      enchants: [[PROTECTION_ENVIRONMENTAL, 3]]
     39: # slot boots
       material: GOLD_HELMET
       amount: 1
-      enchants: [PROTECTION_ENVIRONMENTAL, 3]
+      enchants: [[PROTECTION_ENVIRONMENTAL, 3]]
     37: # slot boots
       material: GOLD_LEGGINGS
       amount: 1
-      enchants: [PROTECTION_ENVIRONMENTAL, 3]   
+      enchants: [[PROTECTION_ENVIRONMENTAL, 3]]   
 24: # level
   min-points: 28
   max-points: 30
@@ -585,23 +585,23 @@
     0: # inventory slot
       material: STONE_AXE
       amount: 1
-      enchants: [DAMAGE_ALL, 2]
+      enchants: [[DAMAGE_ALL, 2]]
     38: # slot boots
       material: GOLD_CHESTPLATE
       amount: 1
-      enchants: [PROTECTION_ENVIRONMENTAL, 3]      
+      enchants: [[PROTECTION_ENVIRONMENTAL, 3]]      
     36: # slot boots
       material: GOLD_BOOTS
       amount: 1
-      enchants: [PROTECTION_ENVIRONMENTAL, 3]
+      enchants: [[PROTECTION_ENVIRONMENTAL, 3]]
     39: # slot boots
       material: GOLD_HELMET
       amount: 1
-      enchants: [PROTECTION_ENVIRONMENTAL, 3]
+      enchants: [[PROTECTION_ENVIRONMENTAL, 3]]
     37: # slot boots
       material: GOLD_LEGGINGS
       amount: 1
-      enchants: [PROTECTION_ENVIRONMENTAL, 3]
+      enchants: [[PROTECTION_ENVIRONMENTAL, 3]]
 25: # level
   min-points: 30
   max-points: 32
@@ -610,23 +610,23 @@
     0: # inventory slot
       material: STONE_SWORD
       amount: 1
-      enchants: [DAMAGE_ALL, 2]
+      enchants: [[DAMAGE_ALL, 2]]
     38: # slot boots
       material: GOLD_CHESTPLATE
       amount: 1
-      enchants: [PROTECTION_ENVIRONMENTAL, 3]      
+      enchants: [[PROTECTION_ENVIRONMENTAL, 3]]      
     36: # slot boots
       material: GOLD_BOOTS
       amount: 1
-      enchants: [PROTECTION_ENVIRONMENTAL, 3]
+      enchants: [[PROTECTION_ENVIRONMENTAL, 3]]
     39: # slot boots
       material: GOLD_HELMET
       amount: 1
-      enchants: [PROTECTION_ENVIRONMENTAL, 3]
+      enchants: [[PROTECTION_ENVIRONMENTAL, 3]]
     37: # slot boots
       material: GOLD_LEGGINGS
       amount: 1
-      enchants: [PROTECTION_ENVIRONMENTAL, 3]
+      enchants: [[PROTECTION_ENVIRONMENTAL, 3]]
 26: # level
   min-points: 32
   max-points: 34
@@ -635,23 +635,23 @@
     0: # inventory slot
       material: STONE_SWORD
       amount: 1
-      enchants: [DAMAGE_ALL, 2]
+      enchants: [[DAMAGE_ALL, 2]]
     38: # slot boots
       material: CHAINMAIL_CHESTPLATE
       amount: 1
-      enchants: [PROTECTION_ENVIRONMENTAL, 1]      
+      enchants: [[PROTECTION_ENVIRONMENTAL, 1]]      
     36: # slot boots
       material: GOLD_BOOTS
       amount: 1
-      enchants: [PROTECTION_ENVIRONMENTAL, 3]
+      enchants: [[PROTECTION_ENVIRONMENTAL, 3]]
     39: # slot boots
       material: GOLD_HELMET
       amount: 1
-      enchants: [PROTECTION_ENVIRONMENTAL, 3]
+      enchants: [[PROTECTION_ENVIRONMENTAL, 3]]
     37: # slot boots
       material: GOLD_LEGGINGS
       amount: 1
-      enchants: [PROTECTION_ENVIRONMENTAL, 3] 
+      enchants: [[PROTECTION_ENVIRONMENTAL, 3]] 
 27: # level
   min-points: 34
   max-points: 36
@@ -660,23 +660,23 @@
     0: # inventory slot
       material: STONE_SWORD
       amount: 1
-      enchants: [DAMAGE_ALL, 2]
+      enchants: [[DAMAGE_ALL, 2]]
     38: # slot boots
       material: CHAINMAIL_CHESTPLATE
       amount: 1
-      enchants: [PROTECTION_ENVIRONMENTAL, 1]      
+      enchants: [[PROTECTION_ENVIRONMENTAL, 1]]      
     36: # slot boots
       material: CHAINMAIL_BOOTS
       amount: 1
-      enchants: [PROTECTION_ENVIRONMENTAL, 1]
+      enchants: [[PROTECTION_ENVIRONMENTAL, 1]]
     39: # slot boots
       material: GOLD_HELMET
       amount: 1
-      enchants: [PROTECTION_ENVIRONMENTAL, 3]
+      enchants: [[PROTECTION_ENVIRONMENTAL, 3]]
     37: # slot boots
       material: GOLD_LEGGINGS
       amount: 1
-      enchants: [PROTECTION_ENVIRONMENTAL, 3]  
+      enchants: [[PROTECTION_ENVIRONMENTAL, 3]]  
 28: # level
   min-points: 36
   max-points: 38
@@ -685,23 +685,23 @@
     0: # inventory slot
       material: STONE_SWORD
       amount: 1
-      enchants: [DAMAGE_ALL, 2]
+      enchants: [[DAMAGE_ALL, 2]]
     39: # slot boots
       material: CHAINMAIL_HELMET
       amount: 1
-      enchants: [PROTECTION_ENVIRONMENTAL, 1]
+      enchants: [[PROTECTION_ENVIRONMENTAL, 1]]
     38: # slot boots
       material: CHAINMAIL_CHESTPLATE
       amount: 1
-      enchants: [PROTECTION_ENVIRONMENTAL, 1]      
+      enchants: [[PROTECTION_ENVIRONMENTAL, 1]]      
     37: # slot boots
       material: GOLD_LEGGINGS
       amount: 1
-      enchants: [PROTECTION_ENVIRONMENTAL, 3]
+      enchants: [[PROTECTION_ENVIRONMENTAL, 3]]
     36: # slot boots
       material: CHAINMAIL_BOOTS
       amount: 1
-      enchants: [PROTECTION_ENVIRONMENTAL, 1]      
+      enchants: [[PROTECTION_ENVIRONMENTAL, 1]]      
 29: # level
   min-points: 38
   max-points: 40
@@ -710,23 +710,23 @@
     0: # inventory slot
       material: STONE_SWORD
       amount: 1
-      enchants: [DAMAGE_ALL, 2]
+      enchants: [[DAMAGE_ALL, 2]]
     39: # slot boots
       material: CHAINMAIL_HELMET
       amount: 1
-      enchants: [PROTECTION_ENVIRONMENTAL, 1]
+      enchants: [[PROTECTION_ENVIRONMENTAL, 1]]
     38: # slot boots
       material: CHAINMAIL_CHESTPLATE
       amount: 1
-      enchants: [PROTECTION_ENVIRONMENTAL, 1]      
+      enchants: [[PROTECTION_ENVIRONMENTAL, 1]]      
     37: # slot boots
       material: CHAINMAIL_LEGGINGS
       amount: 1
-      enchants: [PROTECTION_ENVIRONMENTAL, 1]
+      enchants: [[PROTECTION_ENVIRONMENTAL, 1]]
     36: # slot boots
       material: CHAINMAIL_BOOTS
       amount: 1
-      enchants: [PROTECTION_ENVIRONMENTAL, 1]   
+      enchants: [[PROTECTION_ENVIRONMENTAL, 1]]   
 30: # level
   min-points: 40
   max-points: 42
@@ -735,23 +735,23 @@
     0: # inventory slot
       material: STONE_AXE
       amount: 1
-      enchants: [DAMAGE_ALL, 3]
+      enchants: [[DAMAGE_ALL, 3]]
     39: # slot boots
       material: CHAINMAIL_HELMET
       amount: 1
-      enchants: [PROTECTION_ENVIRONMENTAL, 1]
+      enchants: [[PROTECTION_ENVIRONMENTAL, 1]]
     38: # slot boots
       material: CHAINMAIL_CHESTPLATE
       amount: 1
-      enchants: [PROTECTION_ENVIRONMENTAL, 1]      
+      enchants: [[PROTECTION_ENVIRONMENTAL, 1]]      
     37: # slot boots
       material: CHAINMAIL_LEGGINGS
       amount: 1
-      enchants: [PROTECTION_ENVIRONMENTAL, 1]
+      enchants: [[PROTECTION_ENVIRONMENTAL, 1]]
     36: # slot boots
       material: CHAINMAIL_BOOTS
       amount: 1
-      enchants: [PROTECTION_ENVIRONMENTAL, 1]  
+      enchants: [[PROTECTION_ENVIRONMENTAL, 1]]  
 31: # level
   min-points: 42
   max-points: 44
@@ -760,23 +760,23 @@
     0: # inventory slot
       material: STONE_SWORD
       amount: 1
-      enchants: [DAMAGE_ALL, 3]
+      enchants: [[DAMAGE_ALL, 3]]
     39: # slot boots
       material: CHAINMAIL_HELMET
       amount: 1
-      enchants: [PROTECTION_ENVIRONMENTAL, 1]
+      enchants: [[PROTECTION_ENVIRONMENTAL, 1]]
     38: # slot boots
       material: CHAINMAIL_CHESTPLATE
       amount: 1
-      enchants: [PROTECTION_ENVIRONMENTAL, 1]      
+      enchants: [[PROTECTION_ENVIRONMENTAL, 1]]      
     37: # slot boots
       material: CHAINMAIL_LEGGINGS
       amount: 1
-      enchants: [PROTECTION_ENVIRONMENTAL, 1]
+      enchants: [[PROTECTION_ENVIRONMENTAL, 1]]
     36: # slot boots
       material: CHAINMAIL_BOOTS
       amount: 1
-      enchants: [PROTECTION_ENVIRONMENTAL, 1]  
+      enchants: [[PROTECTION_ENVIRONMENTAL, 1]]  
 32: # level
   min-points: 44
   max-points: 46
@@ -785,23 +785,23 @@
     0: # inventory slot
       material: STONE_SWORD
       amount: 1
-      enchants: [DAMAGE_ALL, 3]
+      enchants: [[DAMAGE_ALL, 3]]
     39: # slot boots
       material: CHAINMAIL_HELMET
       amount: 1
-      enchants: [PROTECTION_ENVIRONMENTAL, 1]
+      enchants: [[PROTECTION_ENVIRONMENTAL, 1]]
     38: # slot boots
       material: CHAINMAIL_CHESTPLATE
       amount: 1
-      enchants: [PROTECTION_ENVIRONMENTAL, 2]      
+      enchants: [[PROTECTION_ENVIRONMENTAL, 2]]      
     37: # slot boots
       material: CHAINMAIL_LEGGINGS
       amount: 1
-      enchants: [PROTECTION_ENVIRONMENTAL, 1]
+      enchants: [[PROTECTION_ENVIRONMENTAL, 1]]
     36: # slot boots
       material: CHAINMAIL_BOOTS
       amount: 1
-      enchants: [PROTECTION_ENVIRONMENTAL, 1]  
+      enchants: [[PROTECTION_ENVIRONMENTAL, 1]]  
 33: # level
   min-points: 46
   max-points: 48
@@ -810,23 +810,23 @@
     0: # inventory slot
       material: STONE_SWORD
       amount: 1
-      enchants: [DAMAGE_ALL, 3]
+      enchants: [[DAMAGE_ALL, 3]]
     39: # slot boots
       material: CHAINMAIL_HELMET
       amount: 1
-      enchants: [PROTECTION_ENVIRONMENTAL, 1]
+      enchants: [[PROTECTION_ENVIRONMENTAL, 1]]
     38: # slot boots
       material: CHAINMAIL_CHESTPLATE
       amount: 1
-      enchants: [PROTECTION_ENVIRONMENTAL, 2]      
+      enchants: [[PROTECTION_ENVIRONMENTAL, 2]]      
     37: # slot boots
       material: CHAINMAIL_LEGGINGS
       amount: 1
-      enchants: [PROTECTION_ENVIRONMENTAL, 1]
+      enchants: [[PROTECTION_ENVIRONMENTAL, 1]]
     36: # slot boots
       material: CHAINMAIL_BOOTS
       amount: 1
-      enchants: [PROTECTION_ENVIRONMENTAL, 2]
+      enchants: [[PROTECTION_ENVIRONMENTAL, 2]]
 34: # level
   min-points: 48
   max-points: 50
@@ -835,23 +835,23 @@
     0: # inventory slot
       material: STONE_SWORD
       amount: 1
-      enchants: [DAMAGE_ALL, 3]
+      enchants: [[DAMAGE_ALL, 3]]
     39: # slot boots
       material: CHAINMAIL_HELMET
       amount: 1
-      enchants: [PROTECTION_ENVIRONMENTAL, 2]
+      enchants: [[PROTECTION_ENVIRONMENTAL, 2]]
     38: # slot boots
       material: CHAINMAIL_CHESTPLATE
       amount: 1
-      enchants: [PROTECTION_ENVIRONMENTAL, 2]      
+      enchants: [[PROTECTION_ENVIRONMENTAL, 2]]      
     37: # slot boots
       material: CHAINMAIL_LEGGINGS
       amount: 1
-      enchants: [PROTECTION_ENVIRONMENTAL, 1]
+      enchants: [[PROTECTION_ENVIRONMENTAL, 1]]
     36: # slot boots
       material: CHAINMAIL_BOOTS
       amount: 1
-      enchants: [PROTECTION_ENVIRONMENTAL, 2]  
+      enchants: [[PROTECTION_ENVIRONMENTAL, 2]]  
 35: # level
   min-points: 50
   max-points: 53
@@ -860,23 +860,23 @@
     0: # inventory slot
       material: STONE_SWORD
       amount: 1
-      enchants: [DAMAGE_ALL, 3]
+      enchants: [[DAMAGE_ALL, 3]]
     39: # slot boots
       material: CHAINMAIL_HELMET
       amount: 1
-      enchants: [PROTECTION_ENVIRONMENTAL, 2]
+      enchants: [[PROTECTION_ENVIRONMENTAL, 2]]
     38: # slot boots
       material: CHAINMAIL_CHESTPLATE
       amount: 1
-      enchants: [PROTECTION_ENVIRONMENTAL, 2]      
+      enchants: [[PROTECTION_ENVIRONMENTAL, 2]]      
     37: # slot boots
       material: CHAINMAIL_LEGGINGS
       amount: 1
-      enchants: [PROTECTION_ENVIRONMENTAL, 2]
+      enchants: [[PROTECTION_ENVIRONMENTAL, 2]]
     36: # slot boots
       material: CHAINMAIL_BOOTS
       amount: 1
-      enchants: [PROTECTION_ENVIRONMENTAL, 2]  
+      enchants: [[PROTECTION_ENVIRONMENTAL, 2]]  
 36: # level
   min-points: 53
   max-points: 56
@@ -885,23 +885,23 @@
     0: # inventory slot
       material: IRON_AXE
       amount: 1
-      enchants: [DAMAGE_ALL, 1]
+      enchants: [[DAMAGE_ALL, 1]]
     39: # slot boots
       material: CHAINMAIL_HELMET
       amount: 1
-      enchants: [PROTECTION_ENVIRONMENTAL, 2]
+      enchants: [[PROTECTION_ENVIRONMENTAL, 2]]
     38: # slot boots
       material: CHAINMAIL_CHESTPLATE
       amount: 1
-      enchants: [PROTECTION_ENVIRONMENTAL, 2]      
+      enchants: [[PROTECTION_ENVIRONMENTAL, 2]]      
     37: # slot boots
       material: CHAINMAIL_LEGGINGS
       amount: 1
-      enchants: [PROTECTION_ENVIRONMENTAL, 2]
+      enchants: [[PROTECTION_ENVIRONMENTAL, 2]]
     36: # slot boots
       material: CHAINMAIL_BOOTS
       amount: 1
-      enchants: [PROTECTION_ENVIRONMENTAL, 2]  
+      enchants: [[PROTECTION_ENVIRONMENTAL, 2]]  
 37: # level
   min-points: 56
   max-points: 59
@@ -910,23 +910,23 @@
     0: # inventory slot
       material: IRON_SWORD
       amount: 1
-      enchants: [DAMAGE_ALL, 1]
+      enchants: [[DAMAGE_ALL, 1]]
     39: # slot boots
       material: CHAINMAIL_HELMET
       amount: 1
-      enchants: [PROTECTION_ENVIRONMENTAL, 2]
+      enchants: [[PROTECTION_ENVIRONMENTAL, 2]]
     38: # slot boots
       material: CHAINMAIL_CHESTPLATE
       amount: 1
-      enchants: [PROTECTION_ENVIRONMENTAL, 2]      
+      enchants: [[PROTECTION_ENVIRONMENTAL, 2]]      
     37: # slot boots
       material: CHAINMAIL_LEGGINGS
       amount: 1
-      enchants: [PROTECTION_ENVIRONMENTAL, 2]
+      enchants: [[PROTECTION_ENVIRONMENTAL, 2]]
     36: # slot boots
       material: CHAINMAIL_BOOTS
       amount: 1
-      enchants: [PROTECTION_ENVIRONMENTAL, 2]  
+      enchants: [[PROTECTION_ENVIRONMENTAL, 2]]  
 38: # level
   min-points: 59
   max-points: 62
@@ -935,11 +935,11 @@
     0: # inventory slot
       material: IRON_SWORD
       amount: 1
-      enchants: [DAMAGE_ALL, 1]
+      enchants: [[DAMAGE_ALL, 1]]
     39: # slot boots
       material: CHAINMAIL_HELMET
       amount: 1
-      enchants: [PROTECTION_ENVIRONMENTAL, 2]
+      enchants: [[PROTECTION_ENVIRONMENTAL, 2]]
     38: # slot boots
       material: IRON_CHESTPLATE
       amount: 1
@@ -947,11 +947,11 @@
     37: # slot boots
       material: CHAINMAIL_LEGGINGS
       amount: 1
-      enchants: [PROTECTION_ENVIRONMENTAL, 2]
+      enchants: [[PROTECTION_ENVIRONMENTAL, 2]]
     36: # slot boots
       material: CHAINMAIL_BOOTS
       amount: 1
-      enchants: [PROTECTION_ENVIRONMENTAL, 2]  
+      enchants: [[PROTECTION_ENVIRONMENTAL, 2]]  
 39: # level
   min-points: 62
   max-points: 65
@@ -960,11 +960,11 @@
     0: # inventory slot
       material: IRON_SWORD
       amount: 1
-      enchants: [DAMAGE_ALL, 1]
+      enchants: [[DAMAGE_ALL, 1]]
     39: # slot boots
       material: CHAINMAIL_HELMET
       amount: 1
-      enchants: [PROTECTION_ENVIRONMENTAL, 2]
+      enchants: [[PROTECTION_ENVIRONMENTAL, 2]]
     38: # slot boots
       material: IRON_CHESTPLATE
       amount: 1
@@ -972,7 +972,7 @@
     37: # slot boots
       material: CHAINMAIL_LEGGINGS
       amount: 1
-      enchants: [PROTECTION_ENVIRONMENTAL, 2]
+      enchants: [[PROTECTION_ENVIRONMENTAL, 2]]
     36: # slot boots
       material: IRON_BOOTS
       amount: 1
@@ -985,7 +985,7 @@
     0: # inventory slot
       material: IRON_SWORD
       amount: 1
-      enchants: [DAMAGE_ALL, 1]
+      enchants: [[DAMAGE_ALL, 1]]
     39: # slot boots
       material: IRON_HELMET
       amount: 1
@@ -997,7 +997,7 @@
     37: # slot boots
       material: CHAINMAIL_LEGGINGS
       amount: 1
-      enchants: [PROTECTION_ENVIRONMENTAL, 2]
+      enchants: [[PROTECTION_ENVIRONMENTAL, 2]]
     36: # slot boots
       material: IRON_BOOTS
       amount: 1
@@ -1010,7 +1010,7 @@
     0: # inventory slot
       material: IRON_SWORD
       amount: 1
-      enchants: [DAMAGE_ALL, 1]
+      enchants: [[DAMAGE_ALL, 1]]
     39: # slot boots
       material: IRON_HELMET
       amount: 1
@@ -1035,7 +1035,7 @@
     0: # inventory slot
       material: IRON_AXE
       amount: 1
-      enchants: [DAMAGE_ALL, 2]
+      enchants: [[DAMAGE_ALL, 2]]
     39: # slot boots
       material: IRON_HELMET
       amount: 1
@@ -1060,7 +1060,7 @@
     0: # inventory slot
       material: IRON_SWORD
       amount: 1
-      enchants: [DAMAGE_ALL, 2]
+      enchants: [[DAMAGE_ALL, 2]]
     39: # slot boots
       material: IRON_HELMET
       amount: 1
@@ -1085,7 +1085,7 @@
     0: # inventory slot
       material: IRON_SWORD
       amount: 1
-      enchants: [DAMAGE_ALL, 2]
+      enchants: [[DAMAGE_ALL, 2]]
     39: # slot boots
       material: IRON_HELMET
       amount: 1
@@ -1093,7 +1093,7 @@
     38: # slot boots
       material: IRON_CHESTPLATE
       amount: 1
-      enchants: [PROTECTION_ENVIRONMENTAL, 1]      
+      enchants: [[PROTECTION_ENVIRONMENTAL, 1]]      
     37: # slot boots
       material: IRON_LEGGINGS
       amount: 1
@@ -1110,7 +1110,7 @@
     0: # inventory slot
       material: IRON_SWORD
       amount: 1
-      enchants: [DAMAGE_ALL, 2]
+      enchants: [[DAMAGE_ALL, 2]]
     39: # slot boots
       material: IRON_HELMET
       amount: 1
@@ -1118,7 +1118,7 @@
     38: # slot boots
       material: IRON_CHESTPLATE
       amount: 1
-      enchants: [PROTECTION_ENVIRONMENTAL, 1]      
+      enchants: [[PROTECTION_ENVIRONMENTAL, 1]]      
     37: # slot boots
       material: IRON_LEGGINGS
       amount: 1
@@ -1126,7 +1126,7 @@
     36: # slot boots
       material: IRON_BOOTS
       amount: 1
-      enchants: [PROTECTION_ENVIRONMENTAL, 1]  
+      enchants: [[PROTECTION_ENVIRONMENTAL, 1]]  
 46: # level
   min-points: 83
   max-points: 86
@@ -1135,15 +1135,15 @@
     0: # inventory slot
       material: IRON_SWORD
       amount: 1
-      enchants: [DAMAGE_ALL, 2]
+      enchants: [[DAMAGE_ALL, 2]]
     39: # slot boots
       material: IRON_HELMET
       amount: 1
-      enchants: [PROTECTION_ENVIRONMENTAL, 1]
+      enchants: [[PROTECTION_ENVIRONMENTAL, 1]]
     38: # slot boots
       material: IRON_CHESTPLATE
       amount: 1
-      enchants: [PROTECTION_ENVIRONMENTAL, 1]      
+      enchants: [[PROTECTION_ENVIRONMENTAL, 1]]      
     37: # slot boots
       material: IRON_LEGGINGS
       amount: 1
@@ -1151,7 +1151,7 @@
     36: # slot boots
       material: IRON_BOOTS
       amount: 1
-      enchants: [PROTECTION_ENVIRONMENTAL, 1]  
+      enchants: [[PROTECTION_ENVIRONMENTAL, 1]]  
 47: # level
   min-points: 86
   max-points: 92
@@ -1160,23 +1160,23 @@
     0: # inventory slot
       material: IRON_SWORD
       amount: 1
-      enchants: [DAMAGE_ALL, 2]
+      enchants: [[DAMAGE_ALL, 2]]
     39: # slot boots
       material: IRON_HELMET
       amount: 1
-      enchants: [PROTECTION_ENVIRONMENTAL, 1]
+      enchants: [[PROTECTION_ENVIRONMENTAL, 1]]
     38: # slot boots
       material: IRON_CHESTPLATE
       amount: 1
-      enchants: [PROTECTION_ENVIRONMENTAL, 1]      
+      enchants: [[PROTECTION_ENVIRONMENTAL, 1]]      
     37: # slot boots
       material: IRON_LEGGINGS
       amount: 1
-      enchants: [PROTECTION_ENVIRONMENTAL, 1]
+      enchants: [[PROTECTION_ENVIRONMENTAL, 1]]
     36: # slot boots
       material: IRON_BOOTS
       amount: 1
-      enchants: [PROTECTION_ENVIRONMENTAL, 1]
+      enchants: [[PROTECTION_ENVIRONMENTAL, 1]]
 48: # level
   min-points: 92
   max-points: 95
@@ -1185,7 +1185,7 @@
     0: # inventory slot
       material: IRON_AXE
       amount: 1
-      enchants: [DAMAGE_ALL, 3]
+      enchants: [[DAMAGE_ALL, 3]]
     1: # inventory slot
       material: FISHING_ROD
       amount: 1
@@ -1193,19 +1193,19 @@
     39: # slot boots
       material: IRON_HELMET
       amount: 1
-      enchants: [PROTECTION_ENVIRONMENTAL, 1]
+      enchants: [[PROTECTION_ENVIRONMENTAL, 1]]
     38: # slot boots
       material: IRON_CHESTPLATE
       amount: 1
-      enchants: [PROTECTION_ENVIRONMENTAL, 1]      
+      enchants: [[PROTECTION_ENVIRONMENTAL, 1]]      
     37: # slot boots
       material: IRON_LEGGINGS
       amount: 1
-      enchants: [PROTECTION_ENVIRONMENTAL, 1]
+      enchants: [[PROTECTION_ENVIRONMENTAL, 1]]
     36: # slot boots
       material: IRON_BOOTS
       amount: 1
-      enchants: [PROTECTION_ENVIRONMENTAL, 1]  
+      enchants: [[PROTECTION_ENVIRONMENTAL, 1]]  
 49: # level
   min-points: 95
   max-points: 98
@@ -1214,7 +1214,7 @@
     0: # inventory slot
       material: IRON_SWORD
       amount: 1
-      enchants: [DAMAGE_ALL, 3]
+      enchants: [[DAMAGE_ALL, 3]]
     1: # inventory slot
       material: FISHING_ROD
       amount: 1
@@ -1222,19 +1222,19 @@
     39: # slot boots
       material: IRON_HELMET
       amount: 1
-      enchants: [PROTECTION_ENVIRONMENTAL, 1]
+      enchants: [[PROTECTION_ENVIRONMENTAL, 1]]
     38: # slot boots
       material: IRON_CHESTPLATE
       amount: 1
-      enchants: [PROTECTION_ENVIRONMENTAL, 1]      
+      enchants: [[PROTECTION_ENVIRONMENTAL, 1]]      
     37: # slot boots
       material: IRON_LEGGINGS
       amount: 1
-      enchants: [PROTECTION_ENVIRONMENTAL, 1]
+      enchants: [[PROTECTION_ENVIRONMENTAL, 1]]
     36: # slot boots
       material: IRON_BOOTS
       amount: 1
-      enchants: [PROTECTION_ENVIRONMENTAL, 1]   
+      enchants: [[PROTECTION_ENVIRONMENTAL, 1]]   
 50: # level
   min-points: 98
   max-points: 101
@@ -1243,7 +1243,7 @@
     0: # inventory slot
       material: IRON_SWORD
       amount: 1
-      enchants: [DAMAGE_ALL, 3]
+      enchants: [[DAMAGE_ALL, 3]]
     1: # inventory slot
       material: FISHING_ROD
       amount: 1
@@ -1251,7 +1251,7 @@
     39: # slot boots
       material: IRON_HELMET
       amount: 1
-      enchants: [PROTECTION_ENVIRONMENTAL, 1]
+      enchants: [[PROTECTION_ENVIRONMENTAL, 1]]
     38: # slot boots
       material: DIAMOND_CHESTPLATE
       amount: 1
@@ -1259,11 +1259,11 @@
     37: # slot boots
       material: IRON_LEGGINGS
       amount: 1
-      enchants: [PROTECTION_ENVIRONMENTAL, 1]
+      enchants: [[PROTECTION_ENVIRONMENTAL, 1]]
     36: # slot boots
       material: IRON_BOOTS
       amount: 1
-      enchants: [PROTECTION_ENVIRONMENTAL, 1]   
+      enchants: [[PROTECTION_ENVIRONMENTAL, 1]]   
 51: # level
   min-points: 101
   max-points: 104
@@ -1272,7 +1272,7 @@
     0: # inventory slot
       material: IRON_SWORD
       amount: 1
-      enchants: [DAMAGE_ALL, 3]
+      enchants: [[DAMAGE_ALL, 3]]
     1: # inventory slot
       material: FISHING_ROD
       amount: 1
@@ -1280,7 +1280,7 @@
     39: # slot boots
       material: IRON_HELMET
       amount: 1
-      enchants: [PROTECTION_ENVIRONMENTAL, 1]
+      enchants: [[PROTECTION_ENVIRONMENTAL, 1]]
     38: # slot boots
       material: DIAMOND_CHESTPLATE
       amount: 1
@@ -1288,7 +1288,7 @@
     37: # slot boots
       material: IRON_LEGGINGS
       amount: 1
-      enchants: [PROTECTION_ENVIRONMENTAL, 1]
+      enchants: [[PROTECTION_ENVIRONMENTAL, 1]]
     36: # slot boots
       material: DIAMOND_BOOTS
       amount: 1
@@ -1301,7 +1301,7 @@
     0: # inventory slot
       material: IRON_SWORD
       amount: 1
-      enchants: [DAMAGE_ALL, 3]
+      enchants: [[DAMAGE_ALL, 3]]
     1: # inventory slot
       material: FISHING_ROD
       amount: 1
@@ -1317,7 +1317,7 @@
     37: # slot boots
       material: IRON_LEGGINGS
       amount: 1
-      enchants: [PROTECTION_ENVIRONMENTAL, 1]
+      enchants: [[PROTECTION_ENVIRONMENTAL, 1]]
     36: # slot boots
       material: DIAMOND_BOOTS
       amount: 1
@@ -1330,7 +1330,7 @@
     0: # inventory slot
       material: IRON_SWORD
       amount: 1
-      enchants: [DAMAGE_ALL, 3]
+      enchants: [[DAMAGE_ALL, 3]]
     1: # inventory slot
       material: FISHING_ROD
       amount: 1
@@ -1346,7 +1346,7 @@
     37: # slot boots
       material: DIAMOND_LEGGINGS
       amount: 1
-      enchants: [PROTECTION_ENVIRONMENTAL, 1]
+      enchants: [[PROTECTION_ENVIRONMENTAL, 1]]
     36: # slot boots
       material: DIAMOND_BOOTS
       amount: 1
@@ -1359,7 +1359,7 @@
     0: # inventory slot  
       material: DIAMOND_AXE
       amount: 1
-      enchants: [DAMAGE_ALL, 1]
+      enchants: [[DAMAGE_ALL, 1]]
     1: # inventory slot
       material: FISHING_ROD
       amount: 1
@@ -1375,7 +1375,7 @@
     37: # slot boots
       material: DIAMOND_LEGGINGS
       amount: 1
-      enchants: [PROTECTION_ENVIRONMENTAL, 1]
+      enchants: [[PROTECTION_ENVIRONMENTAL, 1]]
     36: # slot boots
       material: DIAMOND_BOOTS
       amount: 1
@@ -1388,14 +1388,14 @@
     0: # inventory slot  
       material: DIAMOND_SWORD
       amount: 1
-      enchants: [DAMAGE_ALL, 1]
+      enchants: [[DAMAGE_ALL, 1]]
     1: # inventory slot
       material: FISHING_ROD
       amount: 1
       enchants: []
     2:
       material: BOW
-      enchants: [ARROW_INFINITE, 1]
+      enchants: [[ARROW_INFINITE, 1]]
     10:
       material: ARROW
       enchants: []
@@ -1410,7 +1410,7 @@
     37: # slot boots
       material: DIAMOND_LEGGINGS
       amount: 1
-      enchants: [PROTECTION_ENVIRONMENTAL, 1]
+      enchants: [[PROTECTION_ENVIRONMENTAL, 1]]
     36: # slot boots
       material: DIAMOND_BOOTS
       amount: 1
